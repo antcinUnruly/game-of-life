@@ -3,7 +3,9 @@ from conway.conway import Game
 from conway.cell import Cell
 
 
+
 class TestGameOfLife():
+
     def test_fewer_than_two_neighbours(self):
         # arrange
         game = Game()
