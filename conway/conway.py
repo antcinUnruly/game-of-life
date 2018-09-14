@@ -1,6 +1,5 @@
 from .cell import Cell
 
-
 class Game:
     def run(self, cell, neighbours_number):
         if cell.status == True:

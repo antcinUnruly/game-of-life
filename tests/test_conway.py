@@ -4,15 +4,14 @@ from conway.conway import Game
 from conway.cell import Cell
 
 
-
 class TestGameOfLife():
 
     def test_fewer_than_two_neighbours(self):
         # arrange
         game = Game()
-        cell = Cell()
+        cell = Cell(Initial_status=True)
         # act
-        cell.status = True
+        # cell.status = True
         new_cell = game.run(cell, 1)
         # assert
         assert (new_cell.status == False)
@@ -20,7 +19,7 @@ class TestGameOfLife():
     def test_two_neighbours(self):
         # arrange
         game = Game()
-        cell = Cell()
+        cell = Cell(Initial_status=True)
         # act
         cell.status = True
         new_cell = game.run(cell, 2)
@@ -30,9 +29,9 @@ class TestGameOfLife():
     def test_three_neighbours(self):
         # arrange
         game = Game()
-        cell = Cell()
+        cell = Cell(Initial_status=True)
         # act
-        cell.status = True
+        # cell.status = True
         new_cell = game.run(cell, 3)
         # assert
         assert (new_cell.status == True)
@@ -40,9 +39,9 @@ class TestGameOfLife():
     def test_more_than_three_neighbours(self):
         # arrange
         game = Game()
-        cell = Cell()
+        cell = Cell(Initial_status=True)
         # act
-        cell.status = True
+        # cell.status = True
         new_cell = game.run(cell, 4)
         # assert
         assert (new_cell.status == False)
@@ -50,17 +49,17 @@ class TestGameOfLife():
     def test_five_neighbours(self):
         # arrange
         game = Game()
-        cell = Cell()
+        cell = Cell(Initial_status=True)
         # act
-        cell.status = True
+        # cell.status = True
         new_cell = game.run(cell, 5)
         # assert
         assert (new_cell.status == False)
 
-    def test_death_cell_with_more_than_three_neighbours(self):
+    def test_dead_cell_with_three_neighbours(self):
         game = Game()
-        cell = Cell()
-        cell.status = False
+        cell = Cell(Initial_status=False)
+        # cell.status = False
         new_cell = game.run(cell, 3)
         assert (new_cell.status == True)
 
@@ -83,4 +82,3 @@ class TestGameOfLife():
         game.run(cell, np.count_nonzero(observed_square))
 
         assert (cell.status == False)
-
