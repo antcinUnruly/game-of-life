@@ -2,14 +2,18 @@ from .cell import Cell
 
 
 class Game:
-    def run(self, cell, neighbours_number):
-        if cell.status == True:
-            self.alive(cell, neighbours_number)
-            return cell
+    def run(self, observed_square):
+        for x in observed_square:
+            print(x)
 
-        if cell.status == False:
-            self.dead(cell, neighbours_number)
-            return cell
+
+        # if cell.status == True:
+        #     self.alive(cell, neighbours_number)
+        #     return cell
+        #
+        # if cell.status == False:
+        #     self.dead(cell, neighbours_number)
+        #     return cell
 
     def alive(self, cell, neighbours_number):
         if neighbours_number == 1:

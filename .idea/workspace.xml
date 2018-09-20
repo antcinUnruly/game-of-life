@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac4ec823-fb69-43c4-b0b9-300d11247cb3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conway/conway.py" beforeDir="false" afterPath="$PROJECT_DIR$/conway/conway.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_conway.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_conway.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +57,8 @@
           <file leaf-file-name="test_conway.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/test_conway.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="65" column="39" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="39" />
+                <state relative-caret-position="806">
+                  <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#13#0" expanded="true" />
                   </folding>
@@ -70,16 +70,16 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="conway.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="conway.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/conway/conway.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="32" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cell.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cell.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/conway/cell.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="90">
@@ -106,8 +106,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/conway/test_conway.py" />
-        <option value="$PROJECT_DIR$/conway/conway.py" />
         <option value="$PROJECT_DIR$/conway/cell.py" />
+        <option value="$PROJECT_DIR$/conway/conway.py" />
         <option value="$PROJECT_DIR$/tests/test_conway.py" />
       </list>
     </option>
@@ -298,13 +298,6 @@
     <entry file="file://$PROJECT_DIR$/conway/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/conway/conway.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conway/cell.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -312,10 +305,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conway/conway.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_conway.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="65" column="39" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="39" />
+        <state relative-caret-position="806">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
