@@ -16,10 +16,12 @@ class Game:
 
         # return observed_square.count(True)
 
-    # def run2(self, cell, observed_square):
-    # for cell in observed_square:
-    # no neighbours number, call run, pass get_count_of_alive_neighbours
-    # in run method
+    def run2(self, cell, observed_square):
+        alive_neighbours_number = self.get_count_of_alive_neighbours(observed_square)
+        self.run(cell, alive_neighbours_number)
+
+        # no neighbours number, call run, pass get_count_of_alive_neighbours
+        # in run method
 
     def run(self, cell, neighbours_number):
         print(cell.status, neighbours_number)
