@@ -1,6 +1,6 @@
 [
-  "tests/test_conway.py::TestGameOfLife::()::test_fewer_than_two_neighbours",
-  "tests/test_conway.py::TestGameOfLife::()::test_two_neighbours",
+  "tests/test_conway.py::TestGameOfLife::()::test_fewer_than_two_live_neighbours",
+  "tests/test_conway.py::TestGameOfLife::()::test_two_live_neighbours",
   "tests/test_conway.py::TestGameOfLife::()::test_three_neighbours",
   "tests/test_conway.py::TestGameOfLife::()::test_more_than_three_neighbours",
   "tests/test_conway.py::TestGameOfLife::()::test_five_neighbours",
