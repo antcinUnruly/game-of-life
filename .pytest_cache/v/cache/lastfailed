@@ -1,9 +1,10 @@
 {
   "tests/test_conway.py::TestGameOfLife::()::test_dead_cell_with_more_than_three_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_dead_cell_with_three_neighbours": true,
-  "tests/test_conway.py::TestGameOfLife::()::test_fewer_than_two_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_five_neighbours": true,
+  "tests/test_conway.py::TestGameOfLife::()::test_get_count_of_alive_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_more_than_three_neighbours": true,
+  "tests/test_conway.py::TestGameOfLife::()::test_status_of_neighbour_cell": true,
   "tests/test_conway.py::TestGameOfLife::()::test_three_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_two_neighbours": true
 }

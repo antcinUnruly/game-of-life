@@ -6,17 +6,26 @@ from conway.cell import Cell
 
 class TestGameOfLife():
 
-    def test_fewer_than_two_neighbours(self):
+    def test_fewer_than_two_live_neighbours(self):
+        game = Game()
+        cell = Cell(Initial_status=True)
+        cell_to_right = Cell(Initial_status=True)
+        cell_to_bottom_right = Cell(Initial_status=False)
+        cell_to_bottom = Cell(Initial_status=False)
+        cell_to_bottom_left = Cell(Initial_status=False)
+        cell_to_left = Cell(Initial_status=False)
+        cell_to_top_left = Cell(Initial_status=False)
+        cell_to_top = Cell(Initial_status=False)
+        cell_to_top_right = Cell(Initial_status=False)
 
-        # # arrange
-        # game = Game()
-        # cell = Cell(Initial_status=True)
-        #
-        # # act
-        # # cell.status = True
-        # new_cell = game.run(cell, 1)
-        # # assert
-        # assert (new_cell.status == False)
+        # removed cell from observed_square
+        observed_square = [cell_to_right, cell_to_bottom_right,
+                           cell_to_bottom, cell_to_bottom_left, cell_to_left,
+                           cell_to_top_left, cell_to_top, cell_to_top_right]
+
+        game.run(cell, observed_square)
+
+        assert (cell.status == False)
 
     def test_two_neighbours(self):
         # arrange

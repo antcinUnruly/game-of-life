@@ -18,6 +18,7 @@ class Game:
 
     def run(self, cell, observed_square):
         alive_neighbours_number = self.get_count_of_alive_neighbours(observed_square)
+        print(alive_neighbours_number)
         self.__run_logic(cell, alive_neighbours_number)
 
 
@@ -25,9 +26,10 @@ class Game:
         # in run method
 
     def __run_logic(self, cell, neighbours_number):
-        print(cell.status, neighbours_number)
+
         if cell.status == True:
             self.alive(cell, neighbours_number)
+            print(cell.status, neighbours_number)
             return cell
 
         if cell.status == False:
