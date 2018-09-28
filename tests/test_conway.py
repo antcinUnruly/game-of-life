@@ -80,10 +80,8 @@ class TestGameOfLife():
                            cell_to_top_left, cell_to_top, cell_to_top_right]
 
         game = Game()
-        game.run(cell, np.count_nonzero(observed_square))
-        print("test1", np.count_nonzero(observed_square))
-
-        assert (cell.status == False)
+        game.run2(cell, observed_square)
+        assert (cell.status == True)
 
 
     def test_get_count_of_alive_neighbours(self):
