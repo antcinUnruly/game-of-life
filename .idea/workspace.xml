@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac4ec823-fb69-43c4-b0b9-300d11247cb3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game-of-life" beforeDir="false" afterPath="$PROJECT_DIR$/game-of-life" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_conway.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_conway.py" afterDir="false" />
     </list>
@@ -54,8 +52,8 @@
           <file leaf-file-name="test_conway.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/test_conway.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="407">
-                  <caret line="73" column="54" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
+                <state relative-caret-position="466">
+                  <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
                   <folding>
                     <element signature="e#0#13#0" expanded="true" />
                   </folding>
@@ -334,8 +332,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_conway.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="73" column="54" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
+        <state relative-caret-position="466">
+          <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
