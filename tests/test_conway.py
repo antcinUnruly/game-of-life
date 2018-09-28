@@ -46,15 +46,24 @@ class TestGameOfLife():
         game.run(cell, observed_square)
         assert (cell.status == True)
 
-    def test_three_neighbours(self):
-        # arrange
+    def test_three_live_neighbours(self):
         game = Game()
         cell = Cell(Initial_status=True)
-        # act
-        # cell.status = True
-        new_cell = game.run(cell, 3)
-        # assert
-        assert (new_cell.status == True)
+        cell_to_right = Cell(Initial_status=True)
+        cell_to_bottom_right = Cell(Initial_status=True)
+        cell_to_bottom = Cell(Initial_status=True)
+        cell_to_bottom_left = Cell(Initial_status=False)
+        cell_to_left = Cell(Initial_status=False)
+        cell_to_top_left = Cell(Initial_status=False)
+        cell_to_top = Cell(Initial_status=False)
+        cell_to_top_right = Cell(Initial_status=False)
+
+        observed_square = [cell_to_right, cell_to_bottom_right,
+                           cell_to_bottom, cell_to_bottom_left, cell_to_left,
+                           cell_to_top_left, cell_to_top, cell_to_top_right]
+
+        game.run(cell, observed_square)
+        assert (cell.status == True)
 
     def test_more_than_three_neighbours(self):
         # arrange
