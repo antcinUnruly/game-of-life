@@ -1,5 +1,5 @@
 import pytest
-from conway.conway import Game
+from conway.game import Game
 from conway.cell import Cell
 
 

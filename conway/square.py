@@ -12,7 +12,7 @@ class Square:
 
 square = Square(9)
 
-for attr, value in vars(square).items():
-    for cell in value:
-        print(cell.status)
+# for attr, value in vars(square).items():
+#     for cell in value:
+#         print(cell.status)
 

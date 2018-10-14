@@ -1,12 +1,13 @@
 import numpy as np
 from .cell import Cell
+# from square import square
 
 
 class Game:
 
-    def get_count_of_alive_neighbours(self, observed_square):
+    def get_count_of_alive_neighbours(self, neighbours):
         counter = 0
-        for cell in observed_square:
+        for cell in neighbours:
             if cell.status == True:
                 counter += 1
         return counter
@@ -16,11 +17,10 @@ class Game:
 
         # return observed_square.count(True)
 
-    def run(self, cell, observed_square):
-        alive_neighbours_number = self.get_count_of_alive_neighbours(observed_square)
+    def run(self, cell, neighbours):
+        alive_neighbours_number = self.get_count_of_alive_neighbours(neighbours)
         print(alive_neighbours_number)
         self.__run_logic(cell, alive_neighbours_number)
-
 
         # no neighbours number, call run, pass get_count_of_alive_neighbours
         # in run method

@@ -4,5 +4,6 @@
   "tests/test_conway.py::TestGameOfLife::()::test_five_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_more_than_three_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_three_neighbours": true,
-  "tests/test_conway.py::TestGameOfLife::()::test_two_neighbours": true
+  "tests/test_conway.py::TestGameOfLife::()::test_two_neighbours": true,
+  "tests/test_neighbours.py::TestNeighbours": true
 }
