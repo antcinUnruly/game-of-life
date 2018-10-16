@@ -23,20 +23,6 @@ class TestGameOfLife():
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
 
-        # cell_to_right = Cell(Initial_status=True)
-        # cell_to_bottom_right = Cell(Initial_status=False)
-        # cell_to_bottom = Cell(Initial_status=False)
-        # cell_to_bottom_left = Cell(Initial_status=False)
-        # cell_to_left = Cell(Initial_status=False)
-        # cell_to_top_left = Cell(Initial_status=False)
-        # cell_to_top = Cell(Initial_status=False)
-        # cell_to_top_right = Cell(Initial_status=False)
-        #
-        # # removed cell from observed_square
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
-
         game.run(cell, neighbours.list)
 
         assert (cell.status == False)
@@ -57,19 +43,6 @@ class TestGameOfLife():
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
 
-        # cell_to_right = Cell(Initial_status=True)
-        # cell_to_bottom_right = Cell(Initial_status=True)
-        # cell_to_bottom = Cell(Initial_status=False)
-        # cell_to_bottom_left = Cell(Initial_status=False)
-        # cell_to_left = Cell(Initial_status=False)
-        # cell_to_top_left = Cell(Initial_status=False)
-        # cell_to_top = Cell(Initial_status=False)
-        # cell_to_top_right = Cell(Initial_status=False)
-        #
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
-
         game.run(cell, neighbours.list)
         assert (cell.status == True)
 
@@ -87,19 +60,6 @@ class TestGameOfLife():
         neighbours.neighbour_top_left.status = False
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
-
-        # cell_to_right = Cell(Initial_status=True)
-        # cell_to_bottom_right = Cell(Initial_status=True)
-        # cell_to_bottom = Cell(Initial_status=True)
-        # cell_to_bottom_left = Cell(Initial_status=False)
-        # cell_to_left = Cell(Initial_status=False)
-        # cell_to_top_left = Cell(Initial_status=False)
-        # cell_to_top = Cell(Initial_status=False)
-        # cell_to_top_right = Cell(Initial_status=False)
-        #
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
 
         game.run(cell, neighbours.list)
         assert (cell.status == True)
@@ -120,19 +80,6 @@ class TestGameOfLife():
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
 
-        # cell_to_right = Cell(Initial_status=True)
-        # cell_to_bottom_right = Cell(Initial_status=True)
-        # cell_to_bottom = Cell(Initial_status=True)
-        # cell_to_bottom_left = Cell(Initial_status=True)
-        # cell_to_left = Cell(Initial_status=False)
-        # cell_to_top_left = Cell(Initial_status=False)
-        # cell_to_top = Cell(Initial_status=False)
-        # cell_to_top_right = Cell(Initial_status=False)
-        #
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
-
         game.run(cell, neighbours.list)
         assert (cell.status == False)
 
@@ -151,19 +98,6 @@ class TestGameOfLife():
         neighbours.neighbour_top_left.status = False
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
-
-        # cell_to_right = Cell(Initial_status=True)
-        # cell_to_bottom_right = Cell(Initial_status=True)
-        # cell_to_bottom = Cell(Initial_status=True)
-        # cell_to_bottom_left = Cell(Initial_status=True)
-        # cell_to_left = Cell(Initial_status=True)
-        # cell_to_top_left = Cell(Initial_status=True)
-        # cell_to_top = Cell(Initial_status=False)
-        # cell_to_top_right = Cell(Initial_status=False)
-        #
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
 
         game.run(cell, neighbours.list)
         assert (cell.status == False)
@@ -184,10 +118,6 @@ class TestGameOfLife():
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
 
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
-
         game.run(cell, neighbours.list)
         assert (cell.status == True)
 
@@ -204,19 +134,6 @@ class TestGameOfLife():
         neighbours.neighbour_top_left.status = False
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
-
-        # cell_to_right = Cell(Initial_status=False)
-        # cell_to_bottom_right = Cell(Initial_status=False)
-        # cell_to_bottom = Cell(Initial_status=True)
-        # cell_to_bottom_left = Cell(Initial_status=False)
-        # cell_to_left = Cell(Initial_status=True)
-        # cell_to_top_left = Cell(Initial_status=False)
-        # cell_to_top = Cell(Initial_status=False)
-        # cell_to_top_right = Cell(Initial_status=False)
-        #
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
 
         game = Game()
         game.run(cell, neighbours.list)
@@ -235,19 +152,6 @@ class TestGameOfLife():
         neighbours.neighbour_top_left.status = False
         neighbours.neighbour_top.status = False
         neighbours.neighbour_top_right.status = False
-
-        # cell_to_right = Cell(Initial_status=False)
-        # cell_to_bottom_right = Cell(Initial_status=False)
-        # cell_to_bottom = Cell(Initial_status=True)
-        # cell_to_bottom_left = Cell(Initial_status=False)
-        # cell_to_left = Cell(Initial_status=True)
-        # cell_to_top_left = Cell(Initial_status=False)
-        # cell_to_top = Cell(Initial_status=False)
-        # cell_to_top_right = Cell(Initial_status=False)
-        #
-        # observed_square = [cell_to_right, cell_to_bottom_right,
-        #                    cell_to_bottom, cell_to_bottom_left, cell_to_left,
-        #                    cell_to_top_left, cell_to_top, cell_to_top_right]
 
         game = Game()
         count_of_alive_neighbours = game.get_count_of_alive_neighbours(neighbours.list)
