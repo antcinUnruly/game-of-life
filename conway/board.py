@@ -6,7 +6,7 @@ class Board:
     def make_alive_cells(self, cell_count):
         x = 0
         while x < cell_count:
-            self.alive_cells.extend([x])
+            self.alive_cells.extend([True])
             x+=1
 
         # return cell_count

@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conway/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/conway/board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_board.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,8 +63,8 @@
           <file leaf-file-name="board.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/conway/board.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+                <state relative-caret-position="120">
+                  <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
                 </state>
               </provider>
             </entry>
@@ -168,8 +169,8 @@
         <option value="$PROJECT_DIR$/tests/test_game.py" />
         <option value="$PROJECT_DIR$/conway/square.py" />
         <option value="$PROJECT_DIR$/conway/neighbours.py" />
-        <option value="$PROJECT_DIR$/tests/test_board.py" />
         <option value="$PROJECT_DIR$/conway/board.py" />
+        <option value="$PROJECT_DIR$/tests/test_board.py" />
       </list>
     </option>
   </component>
@@ -742,17 +743,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conway/board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_board.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conway/board.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
