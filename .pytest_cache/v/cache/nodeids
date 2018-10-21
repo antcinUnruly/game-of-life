@@ -1,3 +1,4 @@
 [
-  "tests/test_board.py::TestBoard::()::test_board_instantiation"
+  "tests/test_board.py::TestBoard::()::test_board_instantiation",
+  "tests/test_board.py::TestBoard::()::test_find_alive_neighbours"
 ]

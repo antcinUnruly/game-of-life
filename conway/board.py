@@ -1,3 +1,5 @@
+import numpy as np
+
 class Board:
 
     def __init__(self):
@@ -7,6 +9,10 @@ class Board:
         x = 0
         while x < cell_count:
             self.alive_cells.extend([True])
-            x+=1
+            x += 1
 
         # return cell_count
+
+    def find_alive_neighbours_count(self, neighbours):
+        return(np.count_nonzero(neighbours))
+
