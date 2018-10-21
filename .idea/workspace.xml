@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conway/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/conway/board.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_neighbours.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_neighbours.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +55,8 @@
           <file leaf-file-name="board.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/conway/board.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="35" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="35" />
+                <state relative-caret-position="255">
+                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
                 </state>
               </provider>
             </entry>
@@ -81,8 +80,8 @@
           <file leaf-file-name="test_board.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/test_board.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+                <state relative-caret-position="510">
+                  <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -162,8 +161,8 @@
         <option value="$PROJECT_DIR$/conway/square.py" />
         <option value="$PROJECT_DIR$/conway/neighbours.py" />
         <option value="$PROJECT_DIR$/tests/test_neighbours.py" />
-        <option value="$PROJECT_DIR$/conway/board.py" />
         <option value="$PROJECT_DIR$/tests/test_board.py" />
+        <option value="$PROJECT_DIR$/conway/board.py" />
       </list>
     </option>
   </component>
@@ -736,17 +735,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conway/board.py">
+    <entry file="file://$PROJECT_DIR$/tests/test_board.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="510">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_board.py">
+    <entry file="file://$PROJECT_DIR$/conway/board.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>

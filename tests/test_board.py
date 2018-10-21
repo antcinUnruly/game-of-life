@@ -23,8 +23,13 @@ class TestBoard():
 
         neighbours = [True, False, True, False, True]
 
-        print(neighbours)
-
         # board.find_alive_neighbours(neighbours)
 
         assert(board.find_alive_neighbours_count(neighbours) == 3)
+
+    def test_find_position_of_alive_neighbours(self):
+        board = Board()
+
+        neighbours = [True, False, True, False, True]
+
+        assert(board.find_position_of_alive_neighbours(neighbours) == {0: True, 2: True, 4: True})

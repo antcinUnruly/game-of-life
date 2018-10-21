@@ -16,3 +16,6 @@ class Board:
     def find_alive_neighbours_count(self, neighbours):
         return(np.count_nonzero(neighbours))
 
+    def find_position_of_alive_neighbours(self, neighbours):
+        x = {k:v for k,v in enumerate(neighbours) if v == True}
+        return x
