@@ -1,7 +1,8 @@
 import numpy as np
-import random
+from random import *
 
 from .cell import Cell
+
 
 class Board:
 
@@ -9,13 +10,10 @@ class Board:
         self.alive_cells = []
 
     def make_alive_cells(self, cell_count):
-
         for cell in range(cell_count):
-            cell = Cell(Initial_status=True)
+            cell = Cell(Initial_status=True, x=randint(1, 100), y=randint(1, 100))
             self.alive_cells.append(cell)
         return self.alive_cells
-
-
 
         # x = 0
         # while x < cell_count:
@@ -26,8 +24,8 @@ class Board:
         # return cell_count
 
     def find_alive_neighbours_count(self, neighbours):
-        return(np.count_nonzero(neighbours))
+        return (np.count_nonzero(neighbours))
 
     def find_position_of_alive_neighbours(self, neighbours):
-        x = {k:v for k,v in enumerate(neighbours) if v == True}
+        x = {k: v for k, v in enumerate(neighbours) if v == True}
         return x

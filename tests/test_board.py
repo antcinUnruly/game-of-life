@@ -28,7 +28,17 @@ class TestBoard():
         assert(board.find_position_of_alive_neighbours(neighbours) == {0: True, 2: True, 4: True})
 
 
-    # def test_find_neighbours_of_alive_cell(self):
-    #     board = Board()
-    #     board.make_alive_cells(4)
+    def test_find_neighbours_of_alive_cell(self):
+        board = Board()
+        board.make_alive_cells(4)
+
+        alive_cells = board.alive_cells[0]
+        cell = board.alive_cells[0]
+        cell_position_x = cell.position_x
+        cell_position_y = cell.position_y
+
+        print(cell, cell_position_x, cell_position_y)
+
+        assert(alive_cells.find_neighbours_of_alive_cell(cell, cell_position_x, cell_position_y))
+
 

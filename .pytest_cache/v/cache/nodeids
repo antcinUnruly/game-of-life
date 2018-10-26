@@ -1,5 +1,6 @@
 [
   "tests/test_board.py::TestBoard::()::test_board_instantiation",
   "tests/test_board.py::TestBoard::()::test_find_alive_neighbours",
-  "tests/test_board.py::TestBoard::()::test_find_position_of_alive_neighbours"
+  "tests/test_board.py::TestBoard::()::test_find_position_of_alive_neighbours",
+  "tests/test_board.py::TestBoard::()::test_find_neighbours_of_alive_cell"
 ]
