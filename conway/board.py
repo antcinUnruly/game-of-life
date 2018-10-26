@@ -1,4 +1,7 @@
 import numpy as np
+import random
+
+from .cell import Cell
 
 class Board:
 
@@ -6,10 +9,19 @@ class Board:
         self.alive_cells = []
 
     def make_alive_cells(self, cell_count):
-        x = 0
-        while x < cell_count:
-            self.alive_cells.extend([True])
-            x += 1
+
+        for cell in range(cell_count):
+            cell = Cell(Initial_status=True)
+            self.alive_cells.append(cell)
+        return self.alive_cells
+
+
+
+        # x = 0
+        # while x < cell_count:
+        #     cell.status = True
+        #     self.alive_cells.extend(cell)
+        #     x += 1
 
         # return cell_count
 
