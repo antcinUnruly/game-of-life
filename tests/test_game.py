@@ -10,7 +10,7 @@ class TestGameOfLife():
     def test_fewer_than_two_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=True)
+        cell = Cell(Initial_status=True, x=1, y=1)
 
         neighbours = Neighbours()
 
@@ -30,7 +30,7 @@ class TestGameOfLife():
     def test_two_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=True)
+        cell = Cell(Initial_status=True, x=1, y=1)
 
         neighbours = Neighbours()
 
@@ -48,7 +48,7 @@ class TestGameOfLife():
 
     def test_three_live_neighbours(self):
         game = Game()
-        cell = Cell(Initial_status=True)
+        cell = Cell(Initial_status=True, x=1, y=1)
 
         neighbours = Neighbours()
 
@@ -67,7 +67,7 @@ class TestGameOfLife():
     def test_more_than_three_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=True)
+        cell = Cell(Initial_status=True, x=1, y=1)
 
         neighbours = Neighbours()
 
@@ -86,7 +86,7 @@ class TestGameOfLife():
     def test_five_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=True)
+        cell = Cell(Initial_status=True, x=1, y=1)
 
         neighbours = Neighbours()
 
@@ -105,7 +105,7 @@ class TestGameOfLife():
     def test_dead_cell_with_three_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=False)
+        cell = Cell(Initial_status=False, x=1, y=1)
 
         neighbours = Neighbours()
 
@@ -122,7 +122,7 @@ class TestGameOfLife():
         assert (cell.status == True)
 
     def test_status_of_neighbour_cell(self):
-        cell = Cell(Initial_status=True)
+        cell = Cell(Initial_status=True, x=1, y=1)
 
         neighbours = Neighbours()
 
