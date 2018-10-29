@@ -32,7 +32,7 @@ class TestBoard():
         board = Board()
         board.make_alive_cells(4)
 
-        alive_cells = board.alive_cells[0]
+        alive_cells = board.alive_cells
         cell = board.alive_cells[0]
         cell_position_x = cell.position_x
         cell_position_y = cell.position_y
