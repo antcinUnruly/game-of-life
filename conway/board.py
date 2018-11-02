@@ -30,5 +30,6 @@ class Board:
         x = {k: v for k, v in enumerate(neighbours) if v == True}
         return x
 
-    # def find_neighbours_of_alive_cell(self, cell):
+    def find_neighbours_of_alive_cell(self, cell):
+        return self.alive_cells
 

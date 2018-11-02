@@ -36,4 +36,4 @@ class TestBoard():
 
         print(board.alive_cells)
 
-        assert (len(board.find_neighbours_of_alive_cell(cell_1) == 2))
+        assert (len(board.find_neighbours_of_alive_cell(cell_1)) == 2)
