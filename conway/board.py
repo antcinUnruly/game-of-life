@@ -15,21 +15,34 @@ class Board:
             self.alive_cells.append(cell)
         return self.alive_cells
 
-        # x = 0
-        # while x < cell_count:
-        #     cell.status = True
-        #     self.alive_cells.extend(cell)
-        #     x += 1
-
-        # return cell_count
-
-    def find_alive_neighbours_count(self, neighbours):
-        return (np.count_nonzero(neighbours))
-
-    def find_position_of_alive_neighbours(self, neighbours):
-        x = {k: v for k, v in enumerate(neighbours) if v == True}
-        return x
 
     def find_neighbours_of_alive_cell(self, cell):
-        return self.alive_cells
+        x = cell.position_x
+        y = cell.position_y
 
+        xmin1 = x - 1
+        yplus1 = y + 1
+        xplus1 = x + 1
+        yminus1 = y - 1
+
+        neighbours_of_alive_cell = []
+
+        for alive_cell in self.alive_cells:
+            if alive_cell.position_x == xmin1 and alive_cell.position_y == yplus1:
+                neighbours_of_alive_cell.append(alive_cell)
+            elif alive_cell.position_x == x and alive_cell.position_y == yplus1:
+                neighbours_of_alive_cell.append(alive_cell)
+            elif alive_cell.position_x == xplus1 and alive_cell.position_y == yplus1:
+                neighbours_of_alive_cell.append(alive_cell)
+            elif alive_cell.position_x == xmin1 and alive_cell.position_y == y:
+                neighbours_of_alive_cell.append(alive_cell)
+            elif alive_cell.position_x == xplus1 and alive_cell.position_y == y:
+                neighbours_of_alive_cell.append(alive_cell)
+            elif alive_cell.position_x == xmin1 and alive_cell.position_y == yminus1:
+                neighbours_of_alive_cell.append(alive_cell)
+            elif alive_cell.position_x == x and alive_cell.position_y == yminus1:
+                neighbours_of_alive_cell.append(alive_cell)
+            elif alive_cell.position_x == xplus1 and alive_cell.position_y == yminus1:
+                neighbours_of_alive_cell.append(alive_cell)
+
+        return neighbours_of_alive_cell
