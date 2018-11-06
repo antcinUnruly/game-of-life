@@ -18,8 +18,6 @@ class TestBoard():
 
         board.alive_cells = [cell_1, cell_2, cell_3]
 
-        print(board.alive_cells)
-
         assert (len(board.find_neighbours_of_alive_cell(cell_1)) == 2)
 
     def test_check_correct_neighbours_of_alive_cell(self):
