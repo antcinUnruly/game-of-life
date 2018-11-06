@@ -32,7 +32,7 @@ class Board:
             def push_cell_to_array():
                 neighbours_of_alive_cell.append(alive_cell)
 
-            def do_nothing(*args):
+            def do_nothing():
                 pass
 
             combinations_dictionary = {
@@ -48,31 +48,8 @@ class Board:
 
             }
 
-            # print(d)
-
             alive_cell_positions = (alive_cell.position_x, alive_cell.position_y)
-            # print(k)
             dictionary_function = (combinations_dictionary[alive_cell_positions])
             dictionary_function()
 
-            # if alive_cell.position_x == xmin1 and alive_cell.position_y == yplus1:
-            #     neighbours_of_alive_cell.append(alive_cell)
-            # elif alive_cell.position_x == x and alive_cell.position_y == yplus1:
-            #     neighbours_of_alive_cell.append(alive_cell)
-            # elif alive_cell.position_x == xplus1 and alive_cell.position_y == yplus1:
-            #     neighbours_of_alive_cell.append(alive_cell)
-            # elif alive_cell.position_x == xmin1 and alive_cell.position_y == y:
-            #     neighbours_of_alive_cell.append(alive_cell)
-            # elif alive_cell.position_x == xplus1 and alive_cell.position_y == y:
-            #     neighbours_of_alive_cell.append(alive_cell)
-            # elif alive_cell.position_x == xmin1 and alive_cell.position_y == ymin1:
-            #     neighbours_of_alive_cell.append(alive_cell)
-            # elif alive_cell.position_x == x and alive_cell.position_y == ymin1:
-            #     neighbours_of_alive_cell.append(alive_cell)
-            # elif alive_cell.position_x == xplus1 and alive_cell.position_y == ymin1:
-            #     neighbours_of_alive_cell.append(alive_cell)
-
         return neighbours_of_alive_cell
-
-    # def __append_cell_to_neighbours_of_alive_cell(self, cell, neighbours_of_alive_cell):
-    #     neighbours_of_alive_cell.append(cell)
