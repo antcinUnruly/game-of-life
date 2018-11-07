@@ -1,10 +1,11 @@
 import numpy as np
 from .cell import Cell
+
+
 # from square import square
 
 
 class Game:
-
     def get_count_of_alive_neighbours(self, neighbours):
         counter = 0
         for cell in neighbours:
@@ -12,18 +13,10 @@ class Game:
                 counter += 1
         return counter
 
-        # count_of_true = np.count_nonzero(observed_square)
-        # print(count_of_true)
-
-        # return observed_square.count(True)
-
     def run(self, cell, neighbours):
         alive_neighbours_number = self.get_count_of_alive_neighbours(neighbours)
         print(alive_neighbours_number)
         self.__run_logic(cell, alive_neighbours_number)
-
-        # no neighbours number, call run, pass get_count_of_alive_neighbours
-        # in run method
 
     def __run_logic(self, cell, neighbours_number):
 
