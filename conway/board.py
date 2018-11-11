@@ -11,7 +11,7 @@ class Board:
 
     def make_alive_cells(self, cell_count):
         for cell in range(cell_count):
-            cell = Cell(Initial_status=True, x=randint(0, 100), y=randint(0, 100))
+            cell = Cell(x=randint(0, 100), y=randint(0, 100))
             self.alive_cells.append(cell)
         return self.alive_cells
 
