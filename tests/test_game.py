@@ -45,46 +45,45 @@ class TestGameOfLife():
 
     def test_three_live_neighbours(self):
         game = Game()
-        cell = Cell(Initial_status=True, x=1, y=1)
-        neighbour1 = Cell(Initial_status=True, x=1, y=2)
-        neighbour2 = Cell(Initial_status=True, x=2, y=2)
-        neighbour3 = Cell(Initial_status=True, x=2, y=1)
+        cell = Cell(game, x=1, y=1)
+        neighbour1 = Cell(game, x=1, y=2)
+        neighbour2 = Cell(game, x=2, y=2)
+        neighbour3 = Cell(game, x=2, y=1)
 
         neighbours_list = [neighbour1, neighbour2, neighbour3]
 
         game.run(cell, neighbours_list)
-        assert (cell.status == True)
+        assert (cell in game.cells)
 
     def test_more_than_three_live_neighbours(self):
         game = Game()
 
-        game = Game()
-        cell = Cell(Initial_status=True, x=1, y=1)
-        neighbour1 = Cell(Initial_status=True, x=1, y=2)
-        neighbour2 = Cell(Initial_status=True, x=2, y=2)
-        neighbour3 = Cell(Initial_status=True, x=2, y=1)
-        neighbour4 = Cell(Initial_status=True, x=2, y=3)
+        cell = Cell(game, x=1, y=1)
+        neighbour1 = Cell(game, x=1, y=2)
+        neighbour2 = Cell(game, x=2, y=2)
+        neighbour3 = Cell(game, x=2, y=1)
+        neighbour4 = Cell(game, x=2, y=3)
 
         neighbours_list = [neighbour1, neighbour2, neighbour3, neighbour4]
 
         game.run(cell, neighbours_list)
-        assert (cell.status == False)
+        assert (cell not in game.cells)
 
     def test_five_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=True, x=1, y=1)
+        cell = Cell(game, x=1, y=1)
 
-        neighbour1 = Cell(Initial_status=True, x=1, y=2)
-        neighbour2 = Cell(Initial_status=True, x=2, y=2)
-        neighbour3 = Cell(Initial_status=True, x=2, y=1)
-        neighbour4 = Cell(Initial_status=True, x=2, y=3)
-        neighbour5 = Cell(Initial_status=True, x=3, y=3)
+        neighbour1 = Cell(game, x=1, y=2)
+        neighbour2 = Cell(game, x=2, y=2)
+        neighbour3 = Cell(game, x=2, y=1)
+        neighbour4 = Cell(game, x=2, y=3)
+        neighbour5 = Cell(game, x=3, y=3)
 
         neighbours_list = [neighbour1, neighbour2, neighbour3, neighbour4, neighbour5]
 
         game.run(cell, neighbours_list)
-        assert (cell.status == False)
+        assert (cell not in game.cells)
 
     def test_dead_cell_with_three_live_neighbours(self):
         game = Game()
@@ -94,7 +93,6 @@ class TestGameOfLife():
         neighbour1 = Cell(Initial_status=True, x=1, y=2)
         neighbour2 = Cell(Initial_status=True, x=2, y=2)
         neighbour3 = Cell(Initial_status=True, x=2, y=1)
-
 
         neighbours_list = [neighbour1, neighbour2, neighbour3]
 
