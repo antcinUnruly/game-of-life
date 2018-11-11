@@ -11,47 +11,51 @@ class TestGameOfLife():
 
     def test_fewer_than_two_live_neighbours(self):
         game = Game()
+        print('printing game cells', game.cells)
 
-        cell = Cell(x=1, y=1)
+        cell = Cell(game, x=1, y=1)
+        print('printing cell', cell)
 
-        neighbour1 = Cell(x=1, y=2)
+        neighbour1 = Cell(game, x=1, y=2)
+        print('printing neighbour', neighbour1)
 
-        # instead of having an array just for the neighbours, thought of having one cells_list array containing
-        # the cell and its neighbour/s, so that then we can assert that the cell is not in the array anymore
-        cells_list = [cell, neighbour1]
+        neighbours_list = [neighbour1]
 
-        game.run(cell, cells_list)
+        print('printing game cells', game.cells)
 
-        # assert (cell.status == False)
+        print('is cell alive?', cell.is_alive())
 
-        cell.die(cells_list)
-        # assert cell is not cells list
-        assert (cell not in cells_list)
+        game.run(cell, neighbours_list)
+
+        print('cells after game run', game.cells)
+
+        print('cell is NOT in list of cells', cell not in game.cells)
+
+        assert (cell not in game.cells)
 
     def test_two_live_neighbours(self):
         game = Game()
 
-        cell = Cell(x=1, y=1)
-        neighbour1 = Cell(x=1, y=2)
-        neighbour2 = Cell(x=2, y=2)
+        cell = Cell(Initial_status=True, x=1, y=1)
+        neighbour1 = Cell(Initial_status=True, x=1, y=2)
+        neighbour2 = Cell(Initial_status=True, x=2, y=2)
 
-        cells_list = [cell, neighbour1, neighbour2]
+        neighbours_list = [neighbour1, neighbour2]
 
-        game.run(cell, cells_list)
-
-        assert (cell in cells_list)
+        game.run(cell, neighbours_list)
+        assert (cell.status == True)
 
     def test_three_live_neighbours(self):
         game = Game()
-        cell = Cell(x=1, y=1)
-        neighbour1 = Cell(x=1, y=2)
-        neighbour2 = Cell(x=2, y=2)
-        neighbour3 = Cell(x=2, y=1)
+        cell = Cell(Initial_status=True, x=1, y=1)
+        neighbour1 = Cell(Initial_status=True, x=1, y=2)
+        neighbour2 = Cell(Initial_status=True, x=2, y=2)
+        neighbour3 = Cell(Initial_status=True, x=2, y=1)
 
-        cells_list = [cell, neighbour1, neighbour2, neighbour3]
+        neighbours_list = [neighbour1, neighbour2, neighbour3]
 
-        game.run(cell, cells_list)
-        assert (cell in cells_list)
+        game.run(cell, neighbours_list)
+        assert (cell.status == True)
 
     def test_more_than_three_live_neighbours(self):
         game = Game()
@@ -92,6 +96,7 @@ class TestGameOfLife():
         neighbour1 = Cell(Initial_status=True, x=1, y=2)
         neighbour2 = Cell(Initial_status=True, x=2, y=2)
         neighbour3 = Cell(Initial_status=True, x=2, y=1)
+
 
         neighbours_list = [neighbour1, neighbour2, neighbour3]
 

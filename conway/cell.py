@@ -1,16 +1,16 @@
 class Cell:
-    position_x = 0
-    position_y = 0
 
-    def __init__(self, x, y):
-        self.position_x = x
-        self.position_y = y
+    def __init__(self, game, x=0, y=0):
+        self.game = game
+        self.x = x
+        self.y = y
+        self.game.cells.append(self)
 
-    def die(self, cells_list):
-        cells_list.remove(self)
+    def die(self):
+        self.game.cells.remove(self)
 
-    def is_dead(self, cells_list):
-        self not in cells_list
+    def is_dead(self):
+        return self not in self.game.cells
 
-    def is_alive(self, cells_list):
-        self in cells_list
+    def is_alive(self):
+        return self in self.game.cells
