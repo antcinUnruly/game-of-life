@@ -2,6 +2,7 @@ import numpy as np
 from random import *
 
 from .cell import Cell
+from .game import Game
 
 
 class Board:
@@ -11,13 +12,14 @@ class Board:
 
     def make_alive_cells(self, cell_count):
         for cell in range(cell_count):
-            cell = Cell(x=randint(0, 100), y=randint(0, 100))
+            game = Game()
+            cell = Cell(game, x=randint(0, 100), y=randint(0, 100))
             self.alive_cells.append(cell)
         return self.alive_cells
 
     def find_neighbours_of_alive_cell(self, cell):
-        x = cell.position_x
-        y = cell.position_y
+        x = cell.x
+        y = cell.y
 
         xmin1 = x - 1
         yplus1 = y + 1
@@ -48,7 +50,7 @@ class Board:
 
             }
 
-            alive_cell_positions = (alive_cell.position_x, alive_cell.position_y)
+            alive_cell_positions = (alive_cell.x, alive_cell.y)
             dictionary_function = (combinations_dictionary[alive_cell_positions])
             dictionary_function()
 

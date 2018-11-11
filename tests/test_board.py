@@ -1,5 +1,6 @@
 from conway.board import Board
 from conway.cell import Cell
+from conway.game import Game
 
 
 class TestBoard():
@@ -12,9 +13,11 @@ class TestBoard():
 
     def test_find_neighbours_of_alive_cell(self):
         board = Board()
-        cell_1 = Cell(x=5, y=5)
-        cell_2 = Cell(x=4, y=6)
-        cell_3 = Cell(x=5, y=4)
+        game = Game()
+
+        cell_1 = Cell(game, x=5, y=5)
+        cell_2 = Cell(game, x=4, y=6)
+        cell_3 = Cell(game, x=5, y=4)
 
         board.alive_cells = [cell_1, cell_2, cell_3]
 
@@ -22,10 +25,11 @@ class TestBoard():
 
     def test_check_correct_neighbours_of_alive_cell(self):
         board = Board()
+        game = Game()
 
-        cell_1 = Cell(x=5, y=5)
-        cell_2 = Cell(x=4, y=6)
-        cell_3 = Cell(x=5, y=4)
+        cell_1 = Cell(game, x=5, y=5)
+        cell_2 = Cell(game, x=4, y=6)
+        cell_3 = Cell(game, x=5, y=4)
 
         board.alive_cells = [cell_1, cell_2, cell_3]
 
