@@ -22,13 +22,11 @@ class TestGameOfLife():
         neighbours_list = [neighbour1]
 
         print('printing game cells', game.cells)
-
         print('is cell alive?', cell.is_alive())
 
         game.run(cell, neighbours_list)
 
         print('cells after game run', game.cells)
-
         print('cell is NOT in list of cells', cell not in game.cells)
 
         assert (cell not in game.cells)
@@ -36,14 +34,14 @@ class TestGameOfLife():
     def test_two_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=True, x=1, y=1)
-        neighbour1 = Cell(Initial_status=True, x=1, y=2)
-        neighbour2 = Cell(Initial_status=True, x=2, y=2)
+        cell = Cell(game, x=1, y=1)
+        neighbour1 = Cell(game, x=1, y=2)
+        neighbour2 = Cell(game, x=2, y=2)
 
         neighbours_list = [neighbour1, neighbour2]
 
         game.run(cell, neighbours_list)
-        assert (cell.status == True)
+        assert (cell in game.cells)
 
     def test_three_live_neighbours(self):
         game = Game()
