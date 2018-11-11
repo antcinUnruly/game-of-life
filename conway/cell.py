@@ -6,6 +6,11 @@ class Cell:
         self.position_x = x
         self.position_y = y
 
-    def die(self, list):
-        list.remove(self)
+    def die(self, cells_list):
+        cells_list.remove(self)
 
+    def is_dead(self, cells_list):
+        self not in cells_list
+
+    def is_alive(self, cells_list):
+        self in cells_list

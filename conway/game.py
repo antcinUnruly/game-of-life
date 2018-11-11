@@ -37,7 +37,7 @@ class Game:
             cell.die(self.cells)
             return cell
         if (neighbours_number == 2) or (neighbours_number == 3):
-            cell.status = True
+            cell.is_alive(self.cells)
             return cell
         if neighbours_number > 3:
             cell.status = False
