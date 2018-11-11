@@ -88,14 +88,18 @@ class TestGameOfLife():
     def test_dead_cell_with_three_live_neighbours(self):
         game = Game()
 
-        cell = Cell(Initial_status=False, x=1, y=1)
+        cell = Cell(game, x=1, y=1)
 
-        neighbour1 = Cell(Initial_status=True, x=1, y=2)
-        neighbour2 = Cell(Initial_status=True, x=2, y=2)
-        neighbour3 = Cell(Initial_status=True, x=2, y=1)
+        neighbour1 = Cell(game, x=1, y=2)
+        neighbour2 = Cell(game, x=2, y=2)
+        neighbour3 = Cell(game, x=2, y=1)
+
+        print('cell not in game.cells', cell in game.cells)
 
         neighbours_list = [neighbour1, neighbour2, neighbour3]
 
         game.run(cell, neighbours_list)
 
-        assert (cell.status == True)
+        print('cell in game.cells', cell in game.cells)
+
+        assert (cell in game.cells)

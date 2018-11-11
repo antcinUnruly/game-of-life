@@ -20,13 +20,11 @@ class Game:
 
     def run(self, cell, neighbours):
         alive_neighbours_number = self.get_count_of_alive_neighbours(neighbours)
-        print('number of alive neighbours', alive_neighbours_number)
         self.__run_logic(cell, alive_neighbours_number)
 
     def __run_logic(self, cell, neighbours_number):
         if cell.is_alive():
             self.alive(cell, neighbours_number)
-            print('in logic', cell, neighbours_number)
             return cell
 
         if cell.is_dead():
@@ -38,11 +36,9 @@ class Game:
             cell.die()
         if (neighbours_number == 2) or (neighbours_number == 3):
             cell.is_alive()
-            return cell
         if neighbours_number > 3:
             cell.die()
 
     def dead(self, cell, neighbours_number):
         if neighbours_number == 3:
-            cell.status = True
-            return cell
+            cell.is_alive()
