@@ -2,6 +2,7 @@ import pytest
 import numpy as np
 from conway.game import Game
 from conway.cell import Cell
+from conway.board import Board
 
 
 # from conway.neighbours import Neighbours
@@ -10,33 +11,26 @@ from conway.cell import Cell
 class TestGameOfLife():
 
     def test_fewer_than_two_live_neighbours(self):
-        game = Game()
-        print('printing game cells', game.cells)
 
-        cell = Cell(game, x=1, y=1)
-        print('printing cell', cell)
+        cell = Cell(x=1, y=1)
+        neighbour1 = Cell( x=1, y=2)
 
-        neighbour1 = Cell(game, x=1, y=2)
-        print('printing neighbour', neighbour1)
+        cells_list = [cell, neighbour1]
 
-        neighbours_list = [neighbour1]
+        board = Board(cells_list)
 
-        print('printing game cells', game.cells)
-        print('is cell alive?', cell.is_alive())
+        game = Game(board)
 
-        game.run(cell, neighbours_list)
+        game.run()
 
-        print('cells after game run', game.cells)
-        print('cell is NOT in list of cells', cell not in game.cells)
-
-        assert (cell not in game.cells)
+        assert (cell not in board.alive_cells)
 
     def test_two_live_neighbours(self):
         game = Game()
 
-        cell = Cell(game, x=1, y=1)
-        neighbour1 = Cell(game, x=1, y=2)
-        neighbour2 = Cell(game, x=2, y=2)
+        cell = Cell( x=1, y=1)
+        neighbour1 = Cell(x=1, y=2)
+        neighbour2 = Cell(x=2, y=2)
 
         neighbours_list = [neighbour1, neighbour2]
 

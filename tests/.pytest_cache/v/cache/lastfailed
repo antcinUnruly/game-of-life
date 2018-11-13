@@ -1,4 +1,3 @@
 {
-  "test_board.py::TestBoard::()::test_board_instantiation": true,
   "test_conway.py::TestGameOfLife::()::test_death_cell_with_more_than_three_neighbours": true
 }

@@ -3,7 +3,7 @@ from conway.cell import Cell
 from conway.game import Game
 
 
-class TestBoard():
+class TestBoard:
     def test_board_instantiation(self):
         board = Board()
 
