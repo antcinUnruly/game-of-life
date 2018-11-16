@@ -19,23 +19,25 @@ class Game:
             self.__run_logic(alive_cell, alive_neighbours_number)
 
     def __run_logic(self, cell, neighbours_number):
-        if True:
+        if cell in self.board.alive_cells:
             self.alive(cell, neighbours_number)
             return cell
 
-        if cell.is_dead():
+        if cell not in self.board.alive_cells:
+            print('hiii')
+
             self.dead(cell, neighbours_number)
-            return cell
 
     def alive(self, cell, neighbours_number):
         if neighbours_number == 1:
             self.board.alive_cells.remove(cell)
         if (neighbours_number == 2) or (neighbours_number == 3):
-            cell.is_alive()
+            print(cell, 'is alive')
         if neighbours_number > 3:
-            cell.die()
+            self.board.alive_cells.remove(cell)
 
     def dead(self, cell, neighbours_number):
         if neighbours_number == 3:
-            cell.is_alive()
-
+            print('wooo')
+            self.board.alive_cells.append(cell)
+            print('dead cell array', self.board.alive_cells)
