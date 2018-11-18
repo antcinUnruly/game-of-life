@@ -57,10 +57,10 @@ class TestGameOfLife():
 
     def test_more_than_three_live_neighbours(self):
         cell = Cell(x=1, y=1)
-        neighbour1 = Cell(x=1, y=2)
+        neighbour1 = Cell(x=0, y=2)
         neighbour2 = Cell(x=2, y=2)
         neighbour3 = Cell(x=2, y=1)
-        neighbour4 = Cell(x=1, y=2)
+        neighbour4 = Cell(x=0, y=0)
 
         cells_list = [cell, neighbour1, neighbour2, neighbour3, neighbour4]
 
@@ -72,40 +72,42 @@ class TestGameOfLife():
 
         assert (cell not in board.alive_cells)
 
-    def test_five_live_neighbours(self):
-        cell = Cell(x=2, y=2)
-        neighbour1 = Cell(x=3, y=2)
-        neighbour2 = Cell(x=3, y=3)
-        neighbour3 = Cell(x=2, y=3)
-        neighbour4 = Cell(x=3, y=2)
-        neighbour5 = Cell(x=3, y=3)
 
-        cells_list = [cell, neighbour1, neighbour2, neighbour3, neighbour4, neighbour5]
+def test_five_live_neighbours(self):
+    cell = Cell(x=1, y=1)
+    neighbour1 = Cell(x=1, y=2)
+    neighbour2 = Cell(x=2, y=2)
+    neighbour3 = Cell(x=2, y=1)
+    neighbour4 = Cell(x=1, y=2)
+    neighbour5 = Cell(x=0, y=0)
 
-        board = Board(cells_list)
+    cells_list = [cell, neighbour1, neighbour2, neighbour3, neighbour4, neighbour5]
 
-        game = Game(board)
+    board = Board(cells_list)
 
-        game.run()
+    game = Game(board)
 
-        assert (cell not in board.alive_cells)
+    game.run()
 
-    def test_dead_cell_with_three_live_neighbours(self):
-        cell = Cell(x=1, y=1)
+    assert (cell not in board.alive_cells)
 
-        neighbour1 = Cell(x=1, y=2)
-        neighbour2 = Cell(x=2, y=2)
-        neighbour3 = Cell(x=2, y=1)
 
-        cells_list = [neighbour1, neighbour2, neighbour3]
+def test_dead_cell_with_three_live_neighbours(self):
+    cell = Cell(x=1, y=1)
 
-        board = Board(cells_list)
+    neighbour1 = Cell(x=1, y=2)
+    neighbour2 = Cell(x=2, y=2)
+    neighbour3 = Cell(x=2, y=1)
 
-        game = Game(board)
+    cells_list = [neighbour1, neighbour2, neighbour3]
 
-        game.run()
+    board = Board(cells_list)
 
-        print('test dead cell array',board.alive_cells)
-        print (cell in board.alive_cells)
+    game = Game(board)
 
-        assert (cell in board.alive_cells)
+    game.run()
+
+    print('test dead cell array', board.alive_cells)
+    print(cell in board.alive_cells)
+
+    assert (cell in board.alive_cells)
