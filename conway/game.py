@@ -32,12 +32,15 @@ class Game:
         if neighbours_number == 1:
             self.board.alive_cells.remove(cell)
         if (neighbours_number == 2) or (neighbours_number == 3):
-            print(cell, 'is alive')
+            pass
         if neighbours_number > 3:
+            # print('print alive cells if nn > 3', self.board.alive_cells, len(self.board.alive_cells))
+            # print('cell', cell)
             self.board.alive_cells.remove(cell)
+            # print('print alive cells if nn > 3', self.board.alive_cells, len(self.board.alive_cells))
 
     def dead(self, cell, neighbours_number):
         if neighbours_number == 3:
             print('wooo')
             self.board.alive_cells.append(cell)
-            print('dead cell array', self.board.alive_cells)
+            # print('dead cell array', self.board.alive_cells)

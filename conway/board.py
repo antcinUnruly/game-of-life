@@ -8,6 +8,8 @@ class Board:
 
     def __init__(self, alive_cells):
         self.alive_cells = alive_cells
+        for cell in alive_cells:
+            print('alive cell', cell, cell.x, cell.y)
 
     # def __init__(self, cells):
     #     self.cells_list = cells
@@ -53,5 +55,6 @@ class Board:
             alive_cell_positions = (alive_cell.x, alive_cell.y)
             dictionary_function = (combinations_dictionary[alive_cell_positions])
             dictionary_function()
+            print(alive_cell_positions)
 
         return neighbours_of_alive_cell

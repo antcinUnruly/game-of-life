@@ -3,6 +3,6 @@
   "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_three_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_more_than_three_live_neighbours",
-  "tests/test_game.py::test_five_live_neighbours",
-  "tests/test_game.py::test_dead_cell_with_three_live_neighbours"
+  "tests/test_game.py::TestGameOfLife::()::test_five_live_neighbours",
+  "tests/test_game.py::TestGameOfLife::()::test_dead_cell_with_three_live_neighbours"
 ]

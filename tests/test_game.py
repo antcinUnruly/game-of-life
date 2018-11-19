@@ -65,6 +65,7 @@ class TestGameOfLife():
         cells_list = [cell, neighbour1, neighbour2, neighbour3, neighbour4]
 
         board = Board(cells_list)
+        print(board.alive_cells)
 
         game = Game(board)
 
@@ -73,41 +74,41 @@ class TestGameOfLife():
         assert (cell not in board.alive_cells)
 
 
-def test_five_live_neighbours(self):
-    cell = Cell(x=1, y=1)
-    neighbour1 = Cell(x=1, y=2)
-    neighbour2 = Cell(x=2, y=2)
-    neighbour3 = Cell(x=2, y=1)
-    neighbour4 = Cell(x=1, y=2)
-    neighbour5 = Cell(x=0, y=0)
+    def test_five_live_neighbours(self):
+        cell = Cell(x=1, y=1)
+        neighbour1 = Cell(x=1, y=2)
+        neighbour2 = Cell(x=2, y=2)
+        neighbour3 = Cell(x=2, y=1)
+        neighbour4 = Cell(x=1, y=2)
+        neighbour5 = Cell(x=0, y=0)
 
-    cells_list = [cell, neighbour1, neighbour2, neighbour3, neighbour4, neighbour5]
+        cells_list = [cell, neighbour1, neighbour2, neighbour3, neighbour4, neighbour5]
 
-    board = Board(cells_list)
+        board = Board(cells_list)
 
-    game = Game(board)
+        game = Game(board)
 
-    game.run()
+        game.run()
 
-    assert (cell not in board.alive_cells)
+        assert (cell not in board.alive_cells)
 
 
-def test_dead_cell_with_three_live_neighbours(self):
-    cell = Cell(x=1, y=1)
+    def test_dead_cell_with_three_live_neighbours(self):
+        cell = Cell(x=1, y=1)
 
-    neighbour1 = Cell(x=1, y=2)
-    neighbour2 = Cell(x=2, y=2)
-    neighbour3 = Cell(x=2, y=1)
+        neighbour1 = Cell(x=1, y=2)
+        neighbour2 = Cell(x=2, y=2)
+        neighbour3 = Cell(x=2, y=1)
 
-    cells_list = [neighbour1, neighbour2, neighbour3]
+        cells_list = [neighbour1, neighbour2, neighbour3]
 
-    board = Board(cells_list)
+        board = Board(cells_list)
 
-    game = Game(board)
+        game = Game(board)
 
-    game.run()
+        game.run()
 
-    print('test dead cell array', board.alive_cells)
-    print(cell in board.alive_cells)
+        print('test dead cell array', board.alive_cells)
+        print(cell in board.alive_cells)
 
-    assert (cell in board.alive_cells)
+        assert (cell in board.alive_cells)
