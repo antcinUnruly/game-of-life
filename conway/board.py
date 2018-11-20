@@ -53,8 +53,11 @@ class Board:
             }
 
             alive_cell_positions = (alive_cell.x, alive_cell.y)
+            a = combinations_dictionary.setdefault(alive_cell_positions, do_nothing)
             dictionary_function = (combinations_dictionary[alive_cell_positions])
             dictionary_function()
             print(alive_cell_positions)
+
+
 
         return neighbours_of_alive_cell

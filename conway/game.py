@@ -25,7 +25,6 @@ class Game:
 
         if cell not in self.board.alive_cells:
             print('hiii')
-
             self.dead(cell, neighbours_number)
 
     def alive(self, cell, neighbours_number):
