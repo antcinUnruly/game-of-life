@@ -8,6 +8,7 @@
   "tests/test_game.py::TestGameOfLife::()::test_dead_cell_with_three_live_neighbours": true,
   "tests/test_game.py::TestGameOfLife::()::test_five_live_neighbours": true,
   "tests/test_game.py::TestGameOfLife::()::test_get_count_of_alive_neighbours": true,
+  "tests/test_game.py::TestGameOfLife::()::test_return_dead_neighbours": true,
   "tests/test_game.py::test_dead_cell_with_three_live_neighbours": true,
   "tests/test_game.py::test_five_live_neighbours": true,
   "tests/test_neighbours.py::TestNeighbours::()::test_neighbours": true
