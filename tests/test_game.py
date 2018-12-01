@@ -27,7 +27,7 @@ class TestGameOfLife():
     def test_two_live_neighbours(self):
         cell = Cell(x=1, y=1)
         neighbour1 = Cell(x=1, y=2)
-        neighbour2 = Cell(x=2, y=1)
+        neighbour2 = Cell(x=2, y=2)
 
         cells_list = [cell, neighbour1, neighbour2]
 
@@ -37,7 +37,7 @@ class TestGameOfLife():
 
         game.run()
 
-        assert (cell in game.board.alive_cells)
+        assert (cell in board.alive_cells)
 
     def test_three_live_neighbours(self):
         cell = Cell(x=1, y=1)
@@ -65,7 +65,6 @@ class TestGameOfLife():
         cells_list = [cell, neighbour1, neighbour2, neighbour3, neighbour4]
 
         board = Board(cells_list)
-        print(board.alive_cells)
 
         game = Game(board)
 
@@ -80,8 +79,7 @@ class TestGameOfLife():
         alive_cell_2 = Cell(x=1, y=2)
         alive_cell_3 = Cell(x=2, y=1)
 
-        # cells_list = [alive_cell_2, alive_cell_3, alive_cell_1]
-        cells_list = [alive_cell_2, alive_cell_1]
+        cells_list = [alive_cell_1, alive_cell_2, alive_cell_3]
 
         board = Board(cells_list)
 
@@ -89,14 +87,10 @@ class TestGameOfLife():
 
         game.run()
 
-        # print('test dead cell array', board.alive_cells)
-        # print(cell in board.alive_cells)
-
         assert (cell in board.alive_cells)
 
-
     # def test_return_dead_neighbours(self):
-    #     dead_cell = Cell(x=1, y=1)
+    #     cell = Cell(x=1, y=1)
     #
     #     alive_cell_1 = Cell(x=0, y=1)
     #     alive_cell_2 = Cell(x=1, y=2)
@@ -112,5 +106,4 @@ class TestGameOfLife():
     #
     #     #https://stackoverflow.com/questions/16013485/counting-the-amount-of-occurrences-in-a-list-of-tuples
     #
-    #     assert (game.look_for_dead_cell(alive_cell_1) == [cell_2, cell_3])
-
+    #     assert (game.look_for_dead_cell(cell_1) == [cell_2, cell_3])

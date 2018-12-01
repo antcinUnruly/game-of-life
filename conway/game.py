@@ -13,95 +13,63 @@ class Game:
 
     def run(self):
         # board = Board()
-
         for alive_cell in self.board.alive_cells:
-
-            print('alive cell - collecting neighbours', alive_cell.x, alive_cell.y)
-
-            # print('printing alive cell from board', alive_cell.x, alive_cell.y)
-
-            neighbours = self.find_neighbours_of_alive_cell(self.board, alive_cell)
-            # for n in neighbours:
-            #     print("Im still a neighbour of cell", alive_cell.x, alive_cell.y, ": ", n.x, n.y)
-
-            alive_neighbours_number = len(neighbours)
-            # print('number of neighbours', alive_neighbours_number)
+            print('collecting neighbours of alive cell with coordinates', alive_cell.x, alive_cell.y)
+            alive_neighbours_number = len(self.board.find_neighbours_of_alive_cell(alive_cell))
 
             self.__run_logic(alive_cell, alive_neighbours_number)
+            for n in self.board.alive_cells:
+                print("Im still a neighbour of cell", alive_cell.x, alive_cell.y, ": ", n.x, n.y)
+                print('----alive neighbours----')
+                for cell in self.board.alive_cells:
+                    tuple = (cell.x, cell.y)
+                    print(tuple)
+                print('--------')
 
-    def find_neighbours_of_alive_cell(self, board, cell):
-        total_number_of_live_neighbours = 0
-        # print('Finding my neighbours', cell.x, cell.y)
-        x = cell.x
-        y = cell.y
 
-        x_minus_1 = x - 1
-        y_plus_1 = y + 1
-        x_plus_1 = x + 1
-        y_minus_1 = y - 1
+# def look_for_dead_cell(self):
+    #     dead_neighbours_of_alive_cell = {
+    #
+    #     }
+    #
+    #     for alive_cell in self.board.alive_cells:
+    #         # find locations where there is not alive cell
+    #         x = alive_cell.x
+    #         y = alive_cell.y
+    #
+    #         x_minus_1 = x - 1
+    #         y_plus_1 = y + 1
+    #         x_plus_1 = x + 1
+    #         y_minus_1 = y - 1
+    #
+    #
+    #         def push_cell_to_array():
+    #             dead_neighbours_of_alive_cell.append(alive_cell)
+    #
+    #
+    #         def do_nothing():
+    #             pass
+    #
+    #
+    #         combinations_dictionary = {
+    #             (x_minus_1, y_plus_1): push_cell_to_array,
+    #             (x, y_plus_1): push_cell_to_array,
+    #             (x_plus_1, y_plus_1): push_cell_to_array,
+    #             (x_minus_1, y): push_cell_to_array,
+    #             (x_plus_1, y): push_cell_to_array,
+    #             (x_minus_1, y_minus_1): push_cell_to_array,
+    #             (x, y_minus_1): push_cell_to_array,
+    #             (x_plus_1, y_minus_1): push_cell_to_array,
+    #             (x, y): do_nothing
+    #         }
+    #
+    #         alive_cell_positions = (alive_cell.x, alive_cell.y)
+    #         a = combinations_dictionary.setdefault(alive_cell_positions, do_nothing)
+    #         dictionary_function = (combinations_dictionary[alive_cell_positions])
+    #         dictionary_function()
+    #         print('alive cell positions', alive_cell_positions)
 
-        # print('x: ', x)
-        # print('y: ', y)
-        # print('x_minus_1: ', x_minus_1)
-        # print('y_plus_1: ', y_plus_1)
-        # print('x_plus_1: ', x_plus_1)
-        # print('y_minus_1: ', y_minus_1)
 
-        neighbours_of_alive_cell = []
-
-        #https://github.com/ctjacobs/game-of-life/blob/master/game-of-life.py
-        for i in [x_minus_1, x, x_plus_1]:
-            for j in [y_minus_1, y, y_plus_1]:
-                if x == i and y == j:
-                    continue
-                else:
-                    cell = Cell(x=i, y=j)
-                    print("Im a neighbour of cell", x, y, ": ", cell.x, cell.y)
-                    # print('i and j', i, j)
-                    neighbours_of_alive_cell.append(cell)
-                    # print(neighbours_of_alive_cell)
-
-        # for potential_neighbour in self.board.alive_cells:
-        #     # ref code:
-        #     # http://blog.tplus1.com/blog/2007/06/24/using-dictionaries-rather-than-complex-if-elif-else-clauses/
-        #     def push_cell_to_array():
-        #         neighbours_of_alive_cell.append(potential_neighbour)
-        #
-        #     def do_nothing():
-        #         print('cell in exam')
-        #
-        #     combinations_dictionary = {
-        #         (x_minus_1, y_plus_1): push_cell_to_array,
-        #         (x, y_plus_1): push_cell_to_array,
-        #         (x_plus_1, y_plus_1): push_cell_to_array,
-        #         (x_minus_1, y): push_cell_to_array,
-        #         (x, y): do_nothing,
-        #         (x_plus_1, y): push_cell_to_array,
-        #         (x_minus_1, y_minus_1): push_cell_to_array,
-        #         (x, y_minus_1): push_cell_to_array,
-        #         (x_plus_1, y_minus_1): push_cell_to_array
-        #     }
-        #
-        #     alive_cell_positions = (potential_neighbour.x, potential_neighbour.y)
-        #     a = combinations_dictionary.setdefault(alive_cell_positions, do_nothing)
-        #     dictionary_function = (combinations_dictionary[alive_cell_positions])
-        #     dictionary_function()
-        #     # print('combinations dictionary keys', combinations_dictionary.keys())
-        #     print('------')
-        #
-        #     # for key in combinations_dictionary.keys():
-        #     #
-        #     #     if key == (x, y):
-        #     #         key = alive_cell_positions
-        #     #         print('cell in exam', key)
-        #     #     else:
-        #     #         print(key)
-        #     # print('------')
-        #
-        # for n in neighbours_of_alive_cell:
-        #     print("Im a neighbour of cell", x, y, ": ", n.x, n.y)
-
-        return neighbours_of_alive_cell
 
     def __run_logic(self, cell, neighbours_number):
         if cell in self.board.alive_cells:
@@ -112,7 +80,7 @@ class Game:
         if neighbours_number == 1:
             self.board.alive_cells.remove(cell)
         if (neighbours_number == 2) or (neighbours_number == 3):
-            print('Im alive')
+            pass
         if neighbours_number > 3:
             # print('print alive cells if nn > 3', self.board.alive_cells, len(self.board.alive_cells))
             # print('cell', cell)
