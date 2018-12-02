@@ -14,7 +14,7 @@ class TestBoard:
     def test_find_neighbours_of_alive_cell(self):
         cell_1 = Cell(x=1, y=1)
         cell_2 = Cell(x=2, y=2)
-        cell_3 = Cell(x=3, y=3)
+        cell_3 = Cell(x=2, y=1)
 
         alive_cells = [cell_1, cell_2, cell_3]
         board = Board(alive_cells)

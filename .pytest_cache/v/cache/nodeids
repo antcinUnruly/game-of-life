@@ -1,4 +1,7 @@
 [
+  "tests/test_board.py::TestBoard::()::test_board_instantiation",
+  "tests/test_board.py::TestBoard::()::test_find_neighbours_of_alive_cell",
+  "tests/test_board.py::TestBoard::()::test_check_correct_neighbours_of_alive_cell",
   "tests/test_game.py::TestGameOfLife::()::test_fewer_than_two_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_three_live_neighbours",

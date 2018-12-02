@@ -90,5 +90,5 @@ class Game:
     def dead(self, cell, neighbours_number):
         if neighbours_number == 3:
             print('wooo')
-            self.board.alive_cells.append(cell)
+            self.new_board.alive_cells.append(cell)
             # print('dead cell array', self.board.alive_cells)
