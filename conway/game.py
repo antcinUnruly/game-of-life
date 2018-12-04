@@ -10,8 +10,11 @@ class Game:
 
     def __init__(self, board):
         self.board = board
+        self.new_board = None
+
 
     def run(self):
+        self.new_board = Board()
         # board = Board()
         for alive_cell in self.board.alive_cells:
             print('collecting neighbours of alive cell with coordinates', alive_cell.x, alive_cell.y)
@@ -25,7 +28,7 @@ class Game:
                     tuple = (cell.x, cell.y)
                     print(tuple)
                 print('--------')
-
+        return self.new_board
 
 # def look_for_dead_cell(self):
     #     dead_neighbours_of_alive_cell = {
@@ -78,13 +81,13 @@ class Game:
 
     def alive(self, cell, neighbours_number):
         if neighbours_number == 1:
-            self.board.alive_cells.remove(cell)
-        if (neighbours_number == 2) or (neighbours_number == 3):
             pass
+        if (neighbours_number == 2) or (neighbours_number == 3):
+            self.new_board.alive_cells.append(cell)
         if neighbours_number > 3:
             # print('print alive cells if nn > 3', self.board.alive_cells, len(self.board.alive_cells))
             # print('cell', cell)
-            self.board.alive_cells.remove(cell)
+            pass
             # print('print alive cells if nn > 3', self.board.alive_cells, len(self.board.alive_cells))
 
     def dead(self, cell, neighbours_number):

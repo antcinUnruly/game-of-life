@@ -6,8 +6,9 @@ from .cell import Cell
 
 class Board:
 
-    def __init__(self, alive_cells):
+    def __init__(self, alive_cells=[]):
         self.alive_cells = alive_cells
+
 
     # def __init__(self, cells):
     #     self.cells_list = cells
