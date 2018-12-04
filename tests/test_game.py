@@ -24,26 +24,10 @@ class TestGameOfLife():
 
         assert (cell not in new_board.alive_cells)
 
-    # def test_two_live_neighbours_one(self):
-    #     cell = Cell(x=1, y=1)
-    #     neighbour1 = Cell(x=1, y=2)
-    #     neighbour2 = Cell(x=2, y=2)
-    #
-    #     cells_list = [cell, neighbour1, neighbour2]
-    #
-    #     board = Board(cells_list)
-    #
-    #     game = Game(board)
-    #
-    #     new_board = game.run()
-    #
-    #     assert (cell in new_board.alive_cells)
-    #     assert (len(new_board.alive_cells) == 3)
-
-    def test_two_live_neighbours_case_two(self):
+    def test_two_live_neighbours_one(self):
         cell = Cell(x=1, y=1)
-        neighbour1 = Cell(x=0, y=1)
-        neighbour2 = Cell(x=2, y=1)
+        neighbour1 = Cell(x=1, y=2)
+        neighbour2 = Cell(x=2, y=2)
 
         cells_list = [cell, neighbour1, neighbour2]
 
@@ -54,7 +38,26 @@ class TestGameOfLife():
         new_board = game.run()
 
         assert (cell in new_board.alive_cells)
-        assert (len(new_board.alive_cells) == 1)
+        assert (len(new_board.alive_cells) == 3)
+
+    # def test_two_live_neighbours_case_two(self):
+    #     cell = Cell(x=1, y=1)
+    #     neighbour1 = Cell(x=0, y=1)
+    #     neighbour2 = Cell(x=2, y=1)
+    #
+    #     cells_list = [cell, neighbour1, neighbour2]
+    #
+    #     board = Board(cells_list)
+    #
+    #     game = Game(board)
+    #
+    #     new_board = game.run()
+    #
+    #     # assert (cell in new_board.alive_cells)
+    #     for alive_cell in new_board.alive_cells:
+    #         print('cells, test',alive_cell.x, alive_cell.y)
+    #
+    #     assert (len(new_board.alive_cells) == 1)
 
     def test_three_live_neighbours(self):
         cell = Cell(x=1, y=1)
@@ -104,5 +107,28 @@ class TestGameOfLife():
 
         new_board = game.run()
 
+        print(cell in board.alive_cells)
+
         assert (cell in new_board.alive_cells)
+
+    # def test_return_dead_neighbours(self):
+    #     cell = Cell(x=1, y=1)
+    #
+    #     alive_cell_1 = Cell(x=0, y=1)
+    #     alive_cell_2 = Cell(x=1, y=2)
+    #     alive_cell_3 = Cell(x=2, y=1)
+    #
+    #     cells_list = [alive_cell_1, alive_cell_2, alive_cell_3]
+    #
+    #     board = Board(cells_list)
+    #
+    #     game = Game(board)
+    #
+    #     game.run()
+    #
+    #     #https://stackoverflow.com/questions/16013485/counting-the-amount-of-occurrences-in-a-list-of-tuples
+    #
+    #     assert (game.look_for_dead_cell(cell) == [cell_2, cell_3])
+
+
 

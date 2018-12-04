@@ -40,11 +40,11 @@ class Board:
 
 
             def do_nothing():
-                for i in [x_minus_1, x, x_plus_1]:
-                    for j in [y_minus_1, y, y_plus_1]:
-                        if x == i and y == j:
-                            print('hellooo')
-                            continue
+                pass
+                # for i in [x_minus_1, x, x_plus_1]:
+                #     for j in [y_minus_1, y, y_plus_1]:
+                #         if x == i and y == j:
+                #             continue
 
             # for n in neighbours_of_alive_cell:
             #     tuple = (n.x, n.y)
