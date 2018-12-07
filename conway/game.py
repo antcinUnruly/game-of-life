@@ -1,7 +1,7 @@
 import numpy as np
 from .cell import Cell
 from .board import Board
-
+from collections import Counter
 
 # from square import square
 
@@ -70,16 +70,37 @@ class Game:
                 a = combinations_dictionary.setdefault(alive_cell_positions, do_nothing)
                 dictionary_function = (combinations_dictionary[alive_cell_positions])
                 dictionary_function()
-                print('alive cell positions', alive_cell_positions)
+
+                # count_map = {}
+                # for x in combinations_dictionary.keys():
+                #     count_map[x] = count_map.get(x, 0) +1
+                # print(count_map)
+                # for key in combinations_dictionary.keys():
+                #     count_map = {}
+                #     count_map[key] = count_map.get(key, 0) +1
+                #     print(count_map)
+                # array = []
+                # for key in combinations_dictionary.keys():
+                #
+                #     array.append(key)
+                #     counter = Counter(key)
+                #     print(array)
+
+
+
+
+
+                # print('neighbours combos of cell', alive_cell.x, alive_cell.y, combinations_dictionary.keys())
+                # print('dead neighbours of cell', alive_cell.x, alive_cell.y, dead_neighbours_of_alive_cell)
+                # print('alive cell positions', alive_cell_positions)
 
 
 
     def __run_logic(self, cell, neighbours_number):
+        self.look_for_dead_cell()
         if cell in self.board.alive_cells:
             self.alive(cell, neighbours_number)
             return cell
-
-
 
 
     def alive(self, cell, neighbours_number):

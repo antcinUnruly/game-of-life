@@ -1,6 +1,6 @@
 [
   "tests/test_game.py::TestGameOfLife::()::test_fewer_than_two_live_neighbours",
-  "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours_case_two",
+  "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours_one",
   "tests/test_game.py::TestGameOfLife::()::test_three_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_more_than_three_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_dead_cell_with_three_live_neighbours"
