@@ -40,7 +40,7 @@ class TestGameOfLife():
         assert (cell in new_board.alive_cells)
         assert (len(new_board.alive_cells) == 3)
 
-    # def test_two_live_neighbours_case_two(self):
+    # def test_two_live_neighbours_two(self):
     #     cell = Cell(x=1, y=1)
     #     neighbour1 = Cell(x=0, y=1)
     #     neighbour2 = Cell(x=2, y=1)
