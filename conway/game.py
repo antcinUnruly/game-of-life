@@ -21,13 +21,7 @@ class Game:
             alive_neighbours_number = len(self.board.find_neighbours_of_alive_cell(alive_cell))
 
             self.__run_logic(alive_cell, alive_neighbours_number)
-            for n in self.board.alive_cells:
-                print("Im still a neighbour of cell", alive_cell.x, alive_cell.y, ": ", n.x, n.y)
-                print('----alive neighbours----')
-                for cell in self.board.alive_cells:
-                    tuple = (cell.x, cell.y)
-                    print(tuple)
-                print('--------')
+        print('empty board', self.new_board.alive_cells)
         return self.new_board
 
     def look_for_dead_cell(self):
@@ -66,16 +60,20 @@ class Game:
             dictionary_function = (combinations_dictionary[alive_cell_positions])
             dictionary_function()
 
-            for key in combinations_dictionary.keys():
-                if key == (x, y):
-                    pass
-                else:
-                    dead_neighbours_of_alive_cell.append(key)
+            # for key in combinations_dictionary.keys():
+            #     if key == (x, y):
+            #         pass
+            #     else:
+            #         dead_neighbours_of_alive_cell.append(key)
 
-        print(dead_neighbours_of_alive_cell)
-        cell_with_most_occurrences = Counter(dead_neighbours_of_alive_cell).most_common(1)[0][0]
-        print('cell with most occurrences', cell_with_most_occurrences)
 
+        # print(dead_neighbours_of_alive_cell)
+        # cell_counter = Counter(dead_neighbours_of_alive_cell)
+        # for key, value in cell_counter.items():
+        #     if value == 3:
+        #         born_cell = Cell(x=key[0], y=key[1])
+        #         self.new_board.alive_cells.append(born_cell)
+        #         print(self.new_board.alive_cells)
 
     def __run_logic(self, cell, neighbours_number):
         self.look_for_dead_cell()
