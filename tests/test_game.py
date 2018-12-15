@@ -70,3 +70,29 @@ class TestGameOfLife():
 
         assert (cell not in new_board.alive_cells)
 
+
+    def test_find_neighbours_of_alive_cell(self):
+        cell_1 = Cell(x=1, y=1)
+        cell_2 = Cell(x=2, y=2)
+        cell_3 = Cell(x=2, y=1)
+
+        alive_cells = [cell_1, cell_2, cell_3]
+        board = Board(alive_cells)
+
+        game = Game(board)
+
+        assert (len(game.find_neighbours_of_alive_cell(cell_1)) == 2)
+
+    def test_check_correct_neighbours_of_alive_cell(self):
+        cell_1 = Cell(x=5, y=5)
+        cell_2 = Cell(x=4, y=6)
+        cell_3 = Cell(x=5, y=4)
+
+        alive_cells = [cell_1, cell_2, cell_3]
+        board = Board(alive_cells)
+
+        game = Game(board)
+
+
+        assert (game.find_neighbours_of_alive_cell(cell_1) == [cell_2, cell_3])
+

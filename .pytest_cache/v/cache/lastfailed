@@ -1,4 +1,6 @@
 {
+  "tests/test_board.py::TestBoard::()::test_check_correct_neighbours_of_alive_cell": true,
+  "tests/test_board.py::TestBoard::()::test_find_neighbours_of_alive_cell": true,
   "tests/test_conway.py::TestGameOfLife::()::test_dead_cell_with_more_than_three_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_dead_cell_with_three_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_five_neighbours": true,
