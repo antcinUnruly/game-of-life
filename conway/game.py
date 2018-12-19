@@ -9,6 +9,10 @@ from collections import Counter
 
 class Game:
 
+    def print_cells(self, arr):
+        for x in arr:
+            print(x.x, x.y)
+
     def __init__(self, board):
         self.board = board
         self.new_board = None
@@ -17,27 +21,73 @@ class Game:
     def run(self):
         self.new_board = Board()
         del self.new_board.alive_cells[:]
-        print(self.new_board.alive_cells)
+        print('new board beginning of run', self.new_board.alive_cells)
 
         # board = Board()
+        self.apply_alive_rules()
+        self.apply_dead_rules()
+
+        return self.new_board
+
+    def apply_alive_rules(self):
         for alive_cell in self.board.alive_cells:
             print('collecting neighbours of alive cell with coordinates', alive_cell.x, alive_cell.y)
             alive_neighbours_number = len(self.find_neighbours_of_alive_cell(alive_cell))
 
             self.__run_logic(alive_cell, alive_neighbours_number)
 
-        print('new board', self.new_board.alive_cells)
-        for x in self.new_board.alive_cells:
-            print(x.x, x.y)
+    def apply_dead_rules(self):
+        all_potential_neighbours = []
+        for alive_cell in self.board.alive_cells:
+            neighbours_of_alive_cell = []
+            x = alive_cell.x
+            y = alive_cell.y
 
-        return self.new_board
+            x_minus_1 = x - 1
+            y_plus_1 = y + 1
+            x_plus_1 = x + 1
+            y_minus_1 = y - 1
 
+            potential_combinations = [
+                (x_minus_1, y_plus_1),
+                (x, y_plus_1),
+                (x_plus_1, y_plus_1),
+                (x_minus_1, y),
+                (x_plus_1, y),
+                (x_minus_1, y_minus_1),
+                (x, y_minus_1),
+                (x_plus_1, y_minus_1),
+            ]
+
+            all_potential_neighbours.append(potential_combinations)
+            print(all_potential_neighbours.flatten())
+
+            # for pair in potential_combinations:
+            #     if pair == (x, y):
+            #         pass
+            #     else:
+            #         neighbours_of_alive_cell.append(pair)
+            #
+            # for alive_cell in self.board.alive_cells:
+            #     for cell in self.find_neighbours_of_alive_cell(alive_cell):
+            #
+            # neighbours_of_alive_cell.append(cell)
+            #
+            # self.print_cells(potential_combinations)
+            #
+            cell_counter = Counter(neighbours_of_alive_cell)
+            for key, value in cell_counter.items():
+                if value == 3:
+                    born_cell = Cell(x=key[0], y=key[1])
+                    self.new_board.alive_cells.append(born_cell)
+                    print('in apply dead rules, after counter', self.new_board.alive_cells)
 
 
     def __run_logic(self, cell, neighbours_number):
         if cell in self.board.alive_cells:
             self.alive(cell, neighbours_number)
             return cell
+
 
     def alive(self, cell, neighbours_number):
         if neighbours_number == 1:
@@ -48,11 +98,12 @@ class Game:
         if neighbours_number > 3:
             pass
 
-    def dead(self, cell, neighbours_number):
 
+    def dead(self, cell, neighbours_number):
         if neighbours_number == 3:
             print('wooo')
             self.new_board.alive_cells.append(cell)
+
 
     def find_neighbours_of_alive_cell(self, cell):
         print('Finding  neighbours of alive cell with coordinates', cell.x, cell.y)
@@ -93,7 +144,6 @@ class Game:
             a = combinations_dictionary.setdefault(alive_cell_positions, do_nothing)
             dictionary_function = (combinations_dictionary[alive_cell_positions])
             dictionary_function()
-
 
         print('neighbours of alive cell', neighbours_of_alive_cell)
         return neighbours_of_alive_cell
