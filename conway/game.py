@@ -60,7 +60,11 @@ class Game:
             ]
 
             all_potential_neighbours.append(potential_combinations)
-            print(all_potential_neighbours.flatten())
+
+            flattened_list_of_all_potential_neighbours = [val for sublist in all_potential_neighbours for val in
+                                                          sublist]
+            print(flattened_list_of_all_potential_neighbours)
+
 
             # for pair in potential_combinations:
             #     if pair == (x, y):
@@ -75,6 +79,7 @@ class Game:
             #
             # self.print_cells(potential_combinations)
             #
+
             cell_counter = Counter(neighbours_of_alive_cell)
             for key, value in cell_counter.items():
                 if value == 3:
@@ -82,12 +87,10 @@ class Game:
                     self.new_board.alive_cells.append(born_cell)
                     print('in apply dead rules, after counter', self.new_board.alive_cells)
 
-
     def __run_logic(self, cell, neighbours_number):
         if cell in self.board.alive_cells:
             self.alive(cell, neighbours_number)
             return cell
-
 
     def alive(self, cell, neighbours_number):
         if neighbours_number == 1:
@@ -98,12 +101,10 @@ class Game:
         if neighbours_number > 3:
             pass
 
-
     def dead(self, cell, neighbours_number):
         if neighbours_number == 3:
             print('wooo')
             self.new_board.alive_cells.append(cell)
-
 
     def find_neighbours_of_alive_cell(self, cell):
         print('Finding  neighbours of alive cell with coordinates', cell.x, cell.y)
