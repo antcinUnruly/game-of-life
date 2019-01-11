@@ -39,7 +39,6 @@ class Game:
     def apply_dead_rules(self):
         all_potential_neighbours = []
         for alive_cell in self.board.alive_cells:
-            neighbours_of_alive_cell = []
             x = alive_cell.x
             y = alive_cell.y
 
@@ -60,11 +59,11 @@ class Game:
             ]
 
             all_potential_neighbours.append(potential_combinations)
-
+            print(len(potential_combinations))
             flattened_list_of_all_potential_neighbours = [val for sublist in all_potential_neighbours for val in
                                                           sublist]
-            print(flattened_list_of_all_potential_neighbours)
-
+            neighbours_of_alive_cell = flattened_list_of_all_potential_neighbours
+            # print('flattened neighbours', neighbours_of_alive_cell)
 
             # for pair in potential_combinations:
             #     if pair == (x, y):
@@ -81,10 +80,14 @@ class Game:
             #
 
             cell_counter = Counter(neighbours_of_alive_cell)
+            print(cell_counter)
             for key, value in cell_counter.items():
                 if value == 3:
+                    print(alive_cell)
                     born_cell = Cell(x=key[0], y=key[1])
-                    self.new_board.alive_cells.append(born_cell)
+                    print(born_cell, born_cell.x, born_cell.y)
+                    print('in apply dead rules, after counter', self.new_board.alive_cells)
+                    # self.new_board.alive_cells.append(born_cell)
                     print('in apply dead rules, after counter', self.new_board.alive_cells)
 
     def __run_logic(self, cell, neighbours_number):
@@ -97,17 +100,11 @@ class Game:
             pass
         if (neighbours_number == 2) or (neighbours_number == 3):
             self.new_board.alive_cells.append(cell)
-
         if neighbours_number > 3:
             pass
 
-    def dead(self, cell, neighbours_number):
-        if neighbours_number == 3:
-            print('wooo')
-            self.new_board.alive_cells.append(cell)
-
     def find_neighbours_of_alive_cell(self, cell):
-        print('Finding  neighbours of alive cell with coordinates', cell.x, cell.y)
+        print('Finding neighbours of alive cell with coordinates', cell.x, cell.y)
         x = cell.x
         y = cell.y
 

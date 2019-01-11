@@ -84,9 +84,9 @@ class TestGameOfLife():
         game = Game(board)
 
         new_board = game.run()
-
-        # print(cell in board.alive_cells)
-
+        print('test cell', cell)
+        print('test cell in new board alive cells', cell in new_board.alive_cells)
+        print('test new board alive cells', new_board.alive_cells)
         assert (cell in new_board.alive_cells)
 
     def test_find_neighbours_of_alive_cell(self):
