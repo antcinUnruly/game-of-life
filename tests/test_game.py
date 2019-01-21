@@ -24,7 +24,7 @@ class TestGameOfLife():
     def test_two_live_neighbours_one(self):
         cell = Cell(x=1, y=1)
         neighbour1 = Cell(x=1, y=2)
-        neighbour2 = Cell(x=2, y=2)
+        neighbour2 = Cell(x=1, y=0)
 
         cells_list = [cell, neighbour1, neighbour2]
 
