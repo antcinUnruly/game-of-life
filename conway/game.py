@@ -85,9 +85,9 @@ class Game:
                 if value == 3:
                     print(alive_cell)
                     born_cell = Cell(x=key[0], y=key[1])
-                    print(born_cell, born_cell.x, born_cell.y)
+                    print('born cell', born_cell, born_cell.x, born_cell.y)
                     print('in apply dead rules, after counter', self.new_board.alive_cells)
-                    # self.new_board.alive_cells.append(born_cell)
+                    self.new_board.alive_cells.append(born_cell)
                     print('in apply dead rules, after counter', self.new_board.alive_cells)
 
     def __run_logic(self, cell, neighbours_number):
