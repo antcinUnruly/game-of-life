@@ -28,9 +28,12 @@ class Game:
         all_potential_neighbours = []
 
         for alive_cell in self.board.alive_cells:
-            self.build_potential_neighbours_and_reincarnate_cell(all_potential_neighbours, alive_cell)
+            list_of_all_potential_neighbours = self.build_potential_neighbours(all_potential_neighbours, alive_cell)
+            print('list', list_of_all_potential_neighbours)
+            print('all potential', all_potential_neighbours)
+        self.reincarnate_cell(list_of_all_potential_neighbours)
 
-    def build_potential_neighbours_and_reincarnate_cell(self, all_potential_neighbours, alive_cell):
+    def build_potential_neighbours(self, all_potential_neighbours, alive_cell):
         x = alive_cell.x
         y = alive_cell.y
 
@@ -53,10 +56,10 @@ class Game:
         all_potential_neighbours.append(potential_combinations)
         flattened_list_of_all_potential_neighbours = [val for sublist in all_potential_neighbours for val in
                                                       sublist]
-        neighbours_of_alive_cell = flattened_list_of_all_potential_neighbours
+        return flattened_list_of_all_potential_neighbours
 
+    def reincarnate_cell(self, neighbours_of_alive_cell):
         cell_counter = Counter(neighbours_of_alive_cell)
-
         for key, value in cell_counter.items():
             if value == 3:
                 born_cell = Cell(x=key[0], y=key[1])
