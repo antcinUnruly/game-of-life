@@ -3,12 +3,8 @@ from .cell import Cell
 from .board import Board
 from collections import Counter
 
+
 class Game:
-
-    def print_cells(self, arr):
-        for x in arr:
-            print(x.x, x.y)
-
     def __init__(self, board):
         self.board = board
         self.new_board = None
@@ -30,39 +26,41 @@ class Game:
 
     def apply_dead_rules(self):
         all_potential_neighbours = []
+
         for alive_cell in self.board.alive_cells:
-            x = alive_cell.x
-            y = alive_cell.y
+            self.build_potential_neighbours_and_reincarnate_cell(all_potential_neighbours, alive_cell)
 
-            x_minus_1 = x - 1
-            y_plus_1 = y + 1
-            x_plus_1 = x + 1
-            y_minus_1 = y - 1
+    def build_potential_neighbours_and_reincarnate_cell(self, all_potential_neighbours, alive_cell):
+        x = alive_cell.x
+        y = alive_cell.y
 
-            potential_combinations = [
-                (x_minus_1, y_plus_1),
-                (x, y_plus_1),
-                (x_plus_1, y_plus_1),
-                (x_minus_1, y),
-                (x_plus_1, y),
-                (x_minus_1, y_minus_1),
-                (x, y_minus_1),
-                (x_plus_1, y_minus_1),
-            ]
+        x_minus_1 = x - 1
+        y_plus_1 = y + 1
+        x_plus_1 = x + 1
+        y_minus_1 = y - 1
 
-            all_potential_neighbours.append(potential_combinations)
-            print(len(potential_combinations))
-            flattened_list_of_all_potential_neighbours = [val for sublist in all_potential_neighbours for val in
-                                                          sublist]
-            neighbours_of_alive_cell = flattened_list_of_all_potential_neighbours
+        potential_combinations = [
+            (x_minus_1, y_plus_1),
+            (x, y_plus_1),
+            (x_plus_1, y_plus_1),
+            (x_minus_1, y),
+            (x_plus_1, y),
+            (x_minus_1, y_minus_1),
+            (x, y_minus_1),
+            (x_plus_1, y_minus_1),
+        ]
 
-            cell_counter = Counter(neighbours_of_alive_cell)
-            print(cell_counter)
-            for key, value in cell_counter.items():
-                if value == 3:
-                    print(alive_cell)
-                    born_cell = Cell(x=key[0], y=key[1])
-                    self.new_board.alive_cells.append(born_cell)
+        all_potential_neighbours.append(potential_combinations)
+        flattened_list_of_all_potential_neighbours = [val for sublist in all_potential_neighbours for val in
+                                                      sublist]
+        neighbours_of_alive_cell = flattened_list_of_all_potential_neighbours
+
+        cell_counter = Counter(neighbours_of_alive_cell)
+
+        for key, value in cell_counter.items():
+            if value == 3:
+                born_cell = Cell(x=key[0], y=key[1])
+                self.new_board.alive_cells.append(born_cell)
 
     def __run_logic(self, cell, neighbours_number):
         if cell in self.board.alive_cells:
