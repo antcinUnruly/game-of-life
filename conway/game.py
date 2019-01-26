@@ -2,6 +2,7 @@ import numpy as np
 from .cell import Cell
 from .board import Board
 from collections import Counter
+import itertools
 
 
 class Game:
@@ -29,9 +30,9 @@ class Game:
 
         for alive_cell in self.board.alive_cells:
             list_of_all_potential_neighbours = self.build_potential_neighbours(all_potential_neighbours, alive_cell)
-            print('list', list_of_all_potential_neighbours)
-            print('all potential', all_potential_neighbours)
-        self.reincarnate_cell(list_of_all_potential_neighbours)
+
+            #print('list', list_of_all_potential_neighbours)
+            self.reincarnate_cell(list_of_all_potential_neighbours)
 
     def build_potential_neighbours(self, all_potential_neighbours, alive_cell):
         x = alive_cell.x
@@ -54,8 +55,7 @@ class Game:
         ]
 
         all_potential_neighbours.append(potential_combinations)
-        flattened_list_of_all_potential_neighbours = [val for sublist in all_potential_neighbours for val in
-                                                      sublist]
+        flattened_list_of_all_potential_neighbours = list(itertools.chain(*all_potential_neighbours))
         return flattened_list_of_all_potential_neighbours
 
     def reincarnate_cell(self, neighbours_of_alive_cell):
