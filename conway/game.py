@@ -10,7 +10,6 @@ class Game:
     def __init__(self, board):
         self.board = board
         self.new_board = None
-        self.all_potential_neighbours = []
 
     def run(self):
         self.new_board = Board()
@@ -28,12 +27,23 @@ class Game:
             self.__run_logic(alive_cell, alive_neighbours_number)
 
     def apply_dead_rules(self):
+        list_of_all_potential_neighbours = []
+
 
         for alive_cell in self.board.alive_cells:
-            list_of_all_potential_neighbours = self.build_potential_neighbours(alive_cell)
-            print(id(list_of_all_potential_neighbours))
 
-        print('list in alive', list_of_all_potential_neighbours, id(list_of_all_potential_neighbours))
+            list_of_all_potential_neighbours_of_alive_cell = self.build_potential_neighbours(alive_cell)
+            # print(id(list_of_all_potential_neighbours))
+            list_of_all_potential_neighbours.append(list_of_all_potential_neighbours_of_alive_cell)
+            print('list_of_all_potential_neighbours_of_alive_cell', list_of_all_potential_neighbours_of_alive_cell)
+
+
+    # print('list in alive', list_of_all_potential_neighbours, id(list_of_all_potential_neighbours))
+        print('pre flattening list_of_all_potential_neighbours', list_of_all_potential_neighbours)
+        list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
+        print('list_of_all_potential_neighbours', list_of_all_potential_neighbours)
+        list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
+        print('post flatten list_of_all_potential_neighbours', list_of_all_potential_neighbours)
         self.reincarnate_cell(list_of_all_potential_neighbours)
 
     def build_potential_neighbours(self, alive_cell):
@@ -56,12 +66,14 @@ class Game:
             (x_plus_1, y_minus_1),
         ]
 
-        self.all_potential_neighbours.append(potential_combinations)
-        print('all potential', self.all_potential_neighbours, id(self.all_potential_neighbours))
-        flattened_list_of_all_potential_neighbours = list(itertools.chain(*self.all_potential_neighbours))
-        print('flattened list', flattened_list_of_all_potential_neighbours)
-        return flattened_list_of_all_potential_neighbours
+        all_potential_neighbours = []
 
+        all_potential_neighbours.append(potential_combinations)
+        return all_potential_neighbours
+
+    def flatten_list(self, multidimensional_list):
+        flattened_list_of_all_potential_neighbours = list(itertools.chain(*multidimensional_list))
+        return flattened_list_of_all_potential_neighbours
 
     def reincarnate_cell(self, neighbours_of_alive_cell):
         cell_counter = Counter(neighbours_of_alive_cell)
