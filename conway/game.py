@@ -31,16 +31,10 @@ class Game:
 
         for alive_cell in self.board.alive_cells:
             list_of_all_potential_neighbours_of_alive_cell = self.build_potential_neighbours(alive_cell)
-            # print(id(list_of_all_potential_neighbours))
             list_of_all_potential_neighbours.append(list_of_all_potential_neighbours_of_alive_cell)
-            print('list_of_all_potential_neighbours_of_alive_cell', list_of_all_potential_neighbours_of_alive_cell)
 
-        # print('list in alive', list_of_all_potential_neighbours, id(list_of_all_potential_neighbours))
-        print('pre flattening list_of_all_potential_neighbours', list_of_all_potential_neighbours)
         list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
-        print('list_of_all_potential_neighbours', list_of_all_potential_neighbours)
-        # list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
-        print('post flatten list_of_all_potential_neighbours', list_of_all_potential_neighbours)
+
         self.reincarnate_cell(list_of_all_potential_neighbours)
 
     def build_potential_neighbours(self, alive_cell):
