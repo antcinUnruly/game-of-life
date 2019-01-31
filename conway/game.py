@@ -42,7 +42,7 @@ class Game:
         print('pre flattening list_of_all_potential_neighbours', list_of_all_potential_neighbours)
         list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
         print('list_of_all_potential_neighbours', list_of_all_potential_neighbours)
-        list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
+        # list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
         print('post flatten list_of_all_potential_neighbours', list_of_all_potential_neighbours)
         self.reincarnate_cell(list_of_all_potential_neighbours)
 
@@ -66,10 +66,12 @@ class Game:
             (x_plus_1, y_minus_1),
         ]
 
-        all_potential_neighbours = []
-
-        all_potential_neighbours.append(potential_combinations)
-        return all_potential_neighbours
+        # antcin 31/01/2019:  the two lines of code are not needed. we ended up with a multi-multidimensional array
+        # because we were appending potential_combinations array to all_potential_neighbours array. We only need to return
+        # the potential_combinations array.
+        # all_potential_neighbours = []
+        # all_potential_neighbours.append(potential_combinations)
+        return potential_combinations
 
     def flatten_list(self, multidimensional_list):
         flattened_list_of_all_potential_neighbours = list(itertools.chain(*multidimensional_list))
