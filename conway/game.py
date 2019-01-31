@@ -29,16 +29,13 @@ class Game:
     def apply_dead_rules(self):
         list_of_all_potential_neighbours = []
 
-
         for alive_cell in self.board.alive_cells:
-
             list_of_all_potential_neighbours_of_alive_cell = self.build_potential_neighbours(alive_cell)
             # print(id(list_of_all_potential_neighbours))
             list_of_all_potential_neighbours.append(list_of_all_potential_neighbours_of_alive_cell)
             print('list_of_all_potential_neighbours_of_alive_cell', list_of_all_potential_neighbours_of_alive_cell)
 
-
-    # print('list in alive', list_of_all_potential_neighbours, id(list_of_all_potential_neighbours))
+        # print('list in alive', list_of_all_potential_neighbours, id(list_of_all_potential_neighbours))
         print('pre flattening list_of_all_potential_neighbours', list_of_all_potential_neighbours)
         list_of_all_potential_neighbours = self.flatten_list(list_of_all_potential_neighbours)
         print('list_of_all_potential_neighbours', list_of_all_potential_neighbours)
@@ -66,11 +63,6 @@ class Game:
             (x_plus_1, y_minus_1),
         ]
 
-        # antcin 31/01/2019:  the two lines of code are not needed. we ended up with a multi-multidimensional array
-        # because we were appending potential_combinations array to all_potential_neighbours array. We only need to return
-        # the potential_combinations array.
-        # all_potential_neighbours = []
-        # all_potential_neighbours.append(potential_combinations)
         return potential_combinations
 
     def flatten_list(self, multidimensional_list):
