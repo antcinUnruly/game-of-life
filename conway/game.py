@@ -18,6 +18,8 @@ class Game:
         self.apply_alive_rules()
         self.apply_dead_rules()
 
+        self.board = self.new_board
+
         return self.new_board
 
     def apply_alive_rules(self):
