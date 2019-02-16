@@ -12,7 +12,6 @@ class Game:
         self.board = board
         self.new_board = None
         self.check_board_status()
-        self.game_over()
 
     def make_alive_cells(self, cell_count):
         self.board = Board()
@@ -31,6 +30,7 @@ class Game:
 
         self.apply_alive_rules()
         self.apply_dead_rules()
+        self.game_over()
 
         self.board = self.new_board
 

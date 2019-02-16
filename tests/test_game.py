@@ -184,6 +184,6 @@ class TestGameOfLife:
         # for x in new_board2.alive_cells:
         #     print('newboard2', x.x, x.y)
 
+
         assert (len(new_board2.alive_cells) == 0)
-        assert (game.game_over() == 'game over')
         assert (len(new_board.alive_cells) == 0)
