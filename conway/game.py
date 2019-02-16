@@ -34,11 +34,6 @@ class Game:
 
         self.board = self.new_board
 
-<<<<<<< HEAD
-        self.game_over()
-
-=======
->>>>>>> ff181694c26cdedeadb65a0d0aa5f4a004aa5c68
         return self.new_board
 
     def apply_alive_rules(self):
