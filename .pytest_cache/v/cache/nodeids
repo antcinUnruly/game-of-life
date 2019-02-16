@@ -1,9 +1,16 @@
 [
+  "tests/test_board.py::TestBoard::()::test_board_instantiation",
+  "tests/test_experiment_runner.py::TestExperimentRunner::()::test_run_experiment",
   "tests/test_game.py::TestGameOfLife::()::test_fewer_than_two_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours_one",
   "tests/test_game.py::TestGameOfLife::()::test_three_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_more_than_three_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_dead_cell_with_three_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_find_neighbours_of_alive_cell",
-  "tests/test_game.py::TestGameOfLife::()::test_check_correct_neighbours_of_alive_cell"
+  "tests/test_game.py::TestGameOfLife::()::test_check_correct_neighbours_of_alive_cell",
+  "tests/test_game.py::TestGameOfLife::()::test_run_game_twice",
+  "tests/test_game.py::TestGameOfLife::()::test_run_game_two_adjacent_cells",
+  "tests/test_game.py::TestGameOfLife::()::test_game_run",
+  "tests/test_game.py::TestGameOfLife::()::test_game_over_two_adjacent_cells",
+  "tests/test_game.py::TestGameOfLife::()::test_game_over_run_game_twice"
 ]

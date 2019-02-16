@@ -2,6 +2,7 @@ import numpy as np
 from .cell import Cell
 from .board import Board
 from collections import Counter
+from random import *
 import itertools
 
 
@@ -10,6 +11,19 @@ class Game:
     def __init__(self, board):
         self.board = board
         self.new_board = None
+        self.check_board_status()
+        self.game_over()
+
+    def make_alive_cells(self, cell_count):
+        self.board = Board()
+        for cell in range(cell_count):
+            cell = Cell(x=randint(0, 100), y=randint(0, 100))
+            self.board.alive_cells.append(cell)
+        return self.board.alive_cells
+
+    def check_board_status(self):
+        if self.board is None:
+            self.make_alive_cells(randint(0, 100))
 
     def run(self):
         self.new_board = Board()
@@ -17,6 +31,10 @@ class Game:
 
         self.apply_alive_rules()
         self.apply_dead_rules()
+
+        self.board = self.new_board
+
+        self.game_over()
 
         return self.new_board
 
@@ -69,6 +87,10 @@ class Game:
             if value == 3:
                 born_cell = Cell(x=key[0], y=key[1])
                 self.new_board.alive_cells.append(born_cell)
+
+    def game_over(self):
+        if len(self.board.alive_cells) == 0:
+            return 'game over'
 
     def __run_logic(self, cell, neighbours_number):
         if cell in self.board.alive_cells:
