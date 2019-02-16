@@ -131,10 +131,15 @@ class TestGameOfLife:
 
         new_board2 = game.run()
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ff181694c26cdedeadb65a0d0aa5f4a004aa5c68
         for x in new_board.alive_cells:
             print('newboard', x.x, x.y)
 
         for x in new_board2.alive_cells:
+<<<<<<< HEAD
             print('newboard2', x.x, x.y)
 
         assert (len(new_board2.alive_cells) == 0)
@@ -157,6 +162,15 @@ class TestGameOfLife:
         assert (game.board is not None)
 
     def test_game_over_two_adjacent_cells(self):
+=======
+            print('newboard2',x.x, x.y)
+
+
+        assert (len(new_board2.alive_cells) == 0)
+
+
+    def test_run_game_two_adjacent_cells(self):
+>>>>>>> ff181694c26cdedeadb65a0d0aa5f4a004aa5c68
         alive_cell_1 = Cell(x=1, y=1)
         alive_cell_2 = Cell(x=1, y=2)
 
@@ -167,6 +181,7 @@ class TestGameOfLife:
         game = Game(board)
 
         new_board = game.run()
+<<<<<<< HEAD
 
         assert (len(new_board.alive_cells) == 0)
         assert (game.game_over() == 'game over')
@@ -198,3 +213,6 @@ class TestGameOfLife:
 
         assert (len(new_board2.alive_cells) == 0)
         assert (game.game_over() == 'game over')
+=======
+        assert (len(new_board.alive_cells) == 0)
+>>>>>>> ff181694c26cdedeadb65a0d0aa5f4a004aa5c68
