@@ -16,36 +16,45 @@ class Game:
     def make_alive_cells(self, cell_count):
         self.board = Board()
         for cell in range(cell_count):
-            cell = Cell(x=randint(0, 100), y=randint(0, 100))
+            cell = Cell(x=randint(0, cell_count), y=randint(0, cell_count))
             self.board.alive_cells.append(cell)
+
+        # self.board.alive_cells = list(set(map(tuple, self.board.alive_cells)))
+
         return self.board.alive_cells
 
     def check_board_status(self):
         if self.board is None:
-            self.make_alive_cells(randint(0, 100))
+            print('in check board status')
+            self.make_alive_cells(randint(0, 6))
 
     def run(self):
+        print('in run')
         self.new_board = Board()
         del self.new_board.alive_cells[:]
 
         self.apply_alive_rules()
         self.apply_dead_rules()
-        self.game_over()
+        # self.game_over()
 
         self.board = self.new_board
 
         return self.new_board
 
     def apply_alive_rules(self):
+        print('in applyalive')
         for alive_cell in self.board.alive_cells:
+            print('in for loop applyalive')
             alive_neighbours_number = len(self.find_neighbours_of_alive_cell(alive_cell))
 
             self.__run_logic(alive_cell, alive_neighbours_number)
 
     def apply_dead_rules(self):
+        print('in apply dead')
         list_of_all_potential_neighbours = []
 
         for alive_cell in self.board.alive_cells:
+            print('in for loop apply dead rules')
             list_of_all_potential_neighbours_of_alive_cell = self.build_potential_neighbours(alive_cell)
             list_of_all_potential_neighbours.append(list_of_all_potential_neighbours_of_alive_cell)
 
@@ -83,6 +92,7 @@ class Game:
         cell_counter = Counter(neighbours_of_alive_cell)
         for key, value in cell_counter.items():
             if value == 3:
+                print('reincarnate')
                 born_cell = Cell(x=key[0], y=key[1])
                 self.new_board.alive_cells.append(born_cell)
 

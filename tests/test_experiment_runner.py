@@ -7,9 +7,9 @@ from math import log
 class TestExperimentRunner:
     def test_run_experiment(self):
         game = Game(None)
-        experiment = ExperimentRunner(game)
+        experiment = ExperimentRunner()
 
-        result = experiment.game.run()
+        result = experiment.run_experiment()
 
         # for x in result.alive_cells:
         #     print(x.x, x.y)
@@ -17,4 +17,4 @@ class TestExperimentRunner:
         # print(result.alive_cells)
 
 
-        assert(result.alive_cells == [])
+        assert(result == game.board)
