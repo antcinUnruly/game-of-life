@@ -3,6 +3,8 @@ import numpy as np
 from conway.game import Game
 from conway.cell import Cell
 from conway.board import Board
+import random
+from collections import Counter
 
 
 class TestGameOfLife:
@@ -131,16 +133,13 @@ class TestGameOfLife:
 
         new_board2 = game.run()
 
-
         for x in new_board.alive_cells:
             print('newboard', x.x, x.y)
 
         for x in new_board2.alive_cells:
-            print('newboard2',x.x, x.y)
-
+            print('newboard2', x.x, x.y)
 
         assert (len(new_board2.alive_cells) == 0)
-
 
     def test_run_game_two_adjacent_cells(self):
         alive_cell_1 = Cell(x=1, y=1)
@@ -187,3 +186,28 @@ class TestGameOfLife:
         assert (game.game_over() == 'game over')
         assert (len(new_board2.alive_cells) == 0)
         assert (len(new_board.alive_cells) == 0)
+
+    def test_make_alive_cells(self):
+        random.seed(1)
+
+        random_factor = 4
+
+        game = Game(None, random_factor)
+
+        new_board = game.run()
+
+        cell_counter = Counter(new_board.alive_cells)
+        for key, value in cell_counter.items():
+            if value >= 2:
+                assert False
+                # print('cell is duplicate')
+
+        assert (True)
+
+    def test_randomisation_of_cell_coordinates(self):
+        random.seed(10)
+
+        random.randint(0, 20)
+
+        for x in range(0, 40):
+            print(random.randint(0, 20))

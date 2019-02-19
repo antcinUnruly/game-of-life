@@ -8,25 +8,29 @@ import itertools
 
 class Game:
 
-    def __init__(self, board):
+    def __init__(self, board, random_factor=None):
         self.board = board
         self.new_board = None
-        self.check_board_status()
+        self.check_board_status(random_factor)
 
-    def make_alive_cells(self, cell_count):
+    def make_alive_cells(self, cell_count, random_factor):
         self.board = Board()
+
+        # for x in range(0, 40):
+        #     print(randint(0, random_factor))
         for cell in range(cell_count):
             cell = Cell(x=randint(0, cell_count), y=randint(0, cell_count))
             self.board.alive_cells.append(cell)
+
 
         # self.board.alive_cells = list(set(map(tuple, self.board.alive_cells)))
 
         return self.board.alive_cells
 
-    def check_board_status(self):
+    def check_board_status(self, random_factor):
         if self.board is None:
             print('in check board status')
-            self.make_alive_cells(randint(0, 6))
+            self.make_alive_cells(randint(0, 6), random_factor)
 
     def run(self):
         print('in run')
