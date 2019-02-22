@@ -1,11 +1,17 @@
 [
   "test_board.py::TestBoard::()::test_board_instantiation",
-  "test_board.py::TestBoard::()::test_find_neighbours_of_alive_cell",
-  "test_board.py::TestBoard::()::test_check_correct_neighbours_of_alive_cell",
   "test_game.py::TestGameOfLife::()::test_fewer_than_two_live_neighbours",
-  "test_game.py::TestGameOfLife::()::test_two_live_neighbours",
+  "test_game.py::TestGameOfLife::()::test_two_live_neighbours_one",
   "test_game.py::TestGameOfLife::()::test_three_live_neighbours",
   "test_game.py::TestGameOfLife::()::test_more_than_three_live_neighbours",
-  "test_game.py::TestGameOfLife::()::test_five_live_neighbours",
-  "test_game.py::TestGameOfLife::()::test_dead_cell_with_three_live_neighbours"
+  "test_game.py::TestGameOfLife::()::test_dead_cell_with_three_live_neighbours",
+  "test_game.py::TestGameOfLife::()::test_find_neighbours_of_alive_cell",
+  "test_game.py::TestGameOfLife::()::test_check_correct_neighbours_of_alive_cell",
+  "test_game.py::TestGameOfLife::()::test_run_game_twice",
+  "test_game.py::TestGameOfLife::()::test_run_game_two_adjacent_cells",
+  "test_game.py::TestGameOfLife::()::test_game_run",
+  "test_game.py::TestGameOfLife::()::test_game_over_run_game_twice",
+  "test_game.py::TestGameOfLife::()::test_run_returns_alive_cells",
+  "test_game.py::TestGameOfLife::()::test_cells_are_not_sharing_position_on_board",
+  "test_game.py::TestGameOfLife::()::test_randomisation_of_cell_coordinates"
 ]

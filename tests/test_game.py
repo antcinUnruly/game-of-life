@@ -3,7 +3,7 @@ import numpy as np
 from conway.game import Game
 from conway.cell import Cell
 from conway.board import Board
-import random
+from random import *
 from collections import Counter
 
 
@@ -17,7 +17,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
 
@@ -32,7 +32,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
 
@@ -49,7 +49,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
 
@@ -66,7 +66,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
 
@@ -81,7 +81,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
 
@@ -98,7 +98,7 @@ class TestGameOfLife:
         alive_cells = [cell_1, cell_2, cell_3]
         board = Board(alive_cells)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         assert (len(game.find_neighbours_of_alive_cell(cell_1)) == 2)
 
@@ -110,7 +110,7 @@ class TestGameOfLife:
         alive_cells = [cell_1, cell_2, cell_3]
         board = Board(alive_cells)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         assert (game.find_neighbours_of_alive_cell(cell_1) == [cell_2, cell_3])
 
@@ -123,7 +123,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
         assert (len(new_board.alive_cells) == 2)
@@ -149,7 +149,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
         assert (len(new_board.alive_cells) == 0)
@@ -167,7 +167,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board)
+        game = Game(board, 10, None)
 
         new_board = game.run()
         assert (len(new_board.alive_cells) == 2)
@@ -187,27 +187,61 @@ class TestGameOfLife:
         assert (len(new_board2.alive_cells) == 0)
         assert (len(new_board.alive_cells) == 0)
 
-    def test_make_alive_cells(self):
-        random.seed(1)
+    # def test_make_alive_cells(self):
+    #     seed(10)
+    #
+    #     number_of_cells_on_board = 10
+    #     upper_limit = 10
+    #
+    #     game = Game(None, upper_limit, number_of_cells_on_board)
+    #
+    #     new_board = game.run()
+    #
+    #     cell_counter = Counter(new_board.alive_cells)
+    #     for key, value in cell_counter.items():
+    #         if value >= 2:
+    #             assert False
+    #
+    # assert True
 
-        random_factor = 4
+    def test_run_returns_alive_cells(self):
+        seed(10)
 
-        game = Game(None, random_factor)
+        number_of_cells_on_board = 10
+        upper_limit = 10
+
+        game = Game(None, upper_limit, number_of_cells_on_board)
 
         new_board = game.run()
 
+        assert (len(new_board.alive_cells) == 10)
+
+
+
+    def test_cells_are_not_sharing_position_on_board(self):
+        seed(10)
+
+        number_of_cells_on_board = 10
+        upper_limit = 10
+
+        game = Game(None, upper_limit, number_of_cells_on_board)
+
+        new_board = game.run()
+
+        print(new_board.alive_cells)
+
         cell_counter = Counter(new_board.alive_cells)
+
         for key, value in cell_counter.items():
             if value >= 2:
-                assert False
-                # print('cell is duplicate')
+                assert (new_board == None)
 
-        assert (True)
+        assert False
 
     def test_randomisation_of_cell_coordinates(self):
-        random.seed(10)
+        seed(10)
 
-        random.randint(0, 20)
+        randint(0, 20)
 
         for x in range(0, 40):
-            print(random.randint(0, 20))
+            print(randint(0, 20))

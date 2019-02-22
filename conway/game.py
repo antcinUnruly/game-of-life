@@ -8,29 +8,33 @@ import itertools
 
 class Game:
 
-    def __init__(self, board, random_factor=None):
+    def __init__(self, board, upper_limit=None, number_of_cells_on_board=None):
         self.board = board
         self.new_board = None
-        self.check_board_status(random_factor)
+        self.check_board_status(upper_limit, number_of_cells_on_board)
 
-    def make_alive_cells(self, cell_count, random_factor):
+    def check_board_status(self, upper_limit, number_of_cells_on_board):
+        print('in check board status')
+        if self.board is None:
+            self.make_alive_cells(upper_limit, number_of_cells_on_board)
+
+    def make_alive_cells(self, upper_limit, number_of_cells_on_board):
+        print('in make alive cells')
         self.board = Board()
+        print(range(number_of_cells_on_board))
 
         # for x in range(0, 40):
         #     print(randint(0, random_factor))
-        for cell in range(cell_count):
-            cell = Cell(x=randint(0, cell_count), y=randint(0, cell_count))
+        for cell in range(upper_limit):
+            cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
+            print('cell', cell, cell.x, cell.y)
             self.board.alive_cells.append(cell)
 
+        print('board alive cells', self.board.alive_cells, 'board size', number_of_cells_on_board, self.board)
 
         # self.board.alive_cells = list(set(map(tuple, self.board.alive_cells)))
 
         return self.board.alive_cells
-
-    def check_board_status(self, random_factor):
-        if self.board is None:
-            print('in check board status')
-            self.make_alive_cells(randint(0, 6), random_factor)
 
     def run(self):
         print('in run')
@@ -40,16 +44,21 @@ class Game:
         self.apply_alive_rules()
         self.apply_dead_rules()
         # self.game_over()
+        print(self.board, 'in run', self.board.alive_cells)
 
         self.board = self.new_board
+
+        for x in self.new_board.alive_cells:
+            print(x.x, x.y)
 
         return self.new_board
 
     def apply_alive_rules(self):
         print('in applyalive')
+        print('self board alive cells in applyalive', self.board.alive_cells)
         for alive_cell in self.board.alive_cells:
-            print('in for loop applyalive')
             alive_neighbours_number = len(self.find_neighbours_of_alive_cell(alive_cell))
+            print(alive_neighbours_number, 'alive neighbours')
 
             self.__run_logic(alive_cell, alive_neighbours_number)
 
