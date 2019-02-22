@@ -21,35 +21,31 @@ class Game:
     def make_alive_cells(self, upper_limit, number_of_cells_on_board):
         print('in make alive cells')
         self.board = Board()
+        print('alive cells in make alive cells', self.board.alive_cells)
         print(range(number_of_cells_on_board))
 
         # for x in range(0, 40):
         #     print(randint(0, random_factor))
         for cell in range(upper_limit):
             cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
-            print('cell', cell, cell.x, cell.y)
             self.board.alive_cells.append(cell)
 
-        print('board alive cells', self.board.alive_cells, 'board size', number_of_cells_on_board, self.board)
-
         # self.board.alive_cells = list(set(map(tuple, self.board.alive_cells)))
-
+        print(self.board, 'board in make alive cells')
         return self.board.alive_cells
 
     def run(self):
         print('in run')
         self.new_board = Board()
         del self.new_board.alive_cells[:]
-
+        print(self.new_board, 'new board in run')
+        print(self.board, 'in run before applying stuff', self.board.alive_cells)
         self.apply_alive_rules()
         self.apply_dead_rules()
         # self.game_over()
         print(self.board, 'in run', self.board.alive_cells)
 
         self.board = self.new_board
-
-        for x in self.new_board.alive_cells:
-            print(x.x, x.y)
 
         return self.new_board
 
@@ -58,13 +54,12 @@ class Game:
         print('self board alive cells in applyalive', self.board.alive_cells)
         for alive_cell in self.board.alive_cells:
             alive_neighbours_number = len(self.find_neighbours_of_alive_cell(alive_cell))
-            print(alive_neighbours_number, 'alive neighbours')
-
             self.__run_logic(alive_cell, alive_neighbours_number)
 
     def apply_dead_rules(self):
         print('in apply dead')
         list_of_all_potential_neighbours = []
+        print(self.new_board, 'new board in apply dead')
 
         for alive_cell in self.board.alive_cells:
             print('in for loop apply dead rules')
