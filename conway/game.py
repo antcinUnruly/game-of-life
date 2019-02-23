@@ -1,4 +1,3 @@
-import numpy as np
 from .cell import Cell
 from .board import Board
 from collections import Counter
@@ -20,9 +19,7 @@ class Game:
     def make_alive_cells(self, upper_limit, number_of_cells_on_board):
         self.board = Board()
 
-        # for x in range(0, 40):
-        #     print(randint(0, random_factor))
-        for x in range(upper_limit):
+        for x in range(number_of_cells_on_board):
             cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
             self.board.alive_cells.append(cell)
 

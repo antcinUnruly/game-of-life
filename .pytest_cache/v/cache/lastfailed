@@ -7,7 +7,6 @@
   "tests/test_conway.py::TestGameOfLife::()::test_more_than_three_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_three_neighbours": true,
   "tests/test_conway.py::TestGameOfLife::()::test_two_neighbours": true,
-  "tests/test_experiment_runner.py": true,
   "tests/test_experiment_runner.py::TestExperimentRunner::()::test_run_experiment": true,
   "tests/test_game.py::TestGameOfLife::()::test_five_live_neighbours": true,
   "tests/test_game.py::TestGameOfLife::()::test_game_over": true,

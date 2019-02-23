@@ -1,12 +1,7 @@
-import pytest
-import numpy as np
 from conway.game import Game
 from conway.cell import Cell
 from conway.board import Board
 from random import *
-from collections import Counter
-import functools
-import operator
 import itertools
 
 
