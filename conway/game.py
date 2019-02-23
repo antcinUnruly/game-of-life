@@ -14,55 +14,43 @@ class Game:
         self.check_board_status(upper_limit, number_of_cells_on_board)
 
     def check_board_status(self, upper_limit, number_of_cells_on_board):
-        print('in check board status')
         if self.board is None:
             self.make_alive_cells(upper_limit, number_of_cells_on_board)
 
     def make_alive_cells(self, upper_limit, number_of_cells_on_board):
-        print('in make alive cells')
         self.board = Board()
-        print('alive cells in make alive cells', self.board.alive_cells)
-        print(range(number_of_cells_on_board))
 
         # for x in range(0, 40):
         #     print(randint(0, random_factor))
-        for cell in range(upper_limit):
+        for x in range(upper_limit):
             cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
             self.board.alive_cells.append(cell)
 
-        # self.board.alive_cells = list(set(map(tuple, self.board.alive_cells)))
-        print(self.board, 'board in make alive cells')
+            for a, b in itertools.combinations(self.board.alive_cells, 2):
+                if a.x == b.x and a.y == b.y:
+                    self.board.alive_cells.remove(a)
         return self.board.alive_cells
 
     def run(self):
-        print('in run')
         self.new_board = Board()
         del self.new_board.alive_cells[:]
-        print(self.new_board, 'new board in run')
-        print(self.board, 'in run before applying stuff', self.board.alive_cells)
         self.apply_alive_rules()
         self.apply_dead_rules()
         # self.game_over()
-        print(self.board, 'in run', self.board.alive_cells)
 
         self.board = self.new_board
 
         return self.new_board
 
     def apply_alive_rules(self):
-        print('in applyalive')
-        print('self board alive cells in applyalive', self.board.alive_cells)
         for alive_cell in self.board.alive_cells:
             alive_neighbours_number = len(self.find_neighbours_of_alive_cell(alive_cell))
             self.__run_logic(alive_cell, alive_neighbours_number)
 
     def apply_dead_rules(self):
-        print('in apply dead')
         list_of_all_potential_neighbours = []
-        print(self.new_board, 'new board in apply dead')
 
         for alive_cell in self.board.alive_cells:
-            print('in for loop apply dead rules')
             list_of_all_potential_neighbours_of_alive_cell = self.build_potential_neighbours(alive_cell)
             list_of_all_potential_neighbours.append(list_of_all_potential_neighbours_of_alive_cell)
 
@@ -100,7 +88,6 @@ class Game:
         cell_counter = Counter(neighbours_of_alive_cell)
         for key, value in cell_counter.items():
             if value == 3:
-                print('reincarnate')
                 born_cell = Cell(x=key[0], y=key[1])
                 self.new_board.alive_cells.append(born_cell)
 

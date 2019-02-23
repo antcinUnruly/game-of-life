@@ -157,34 +157,15 @@ class TestGameOfLife:
         new_board = game.run()
         assert (len(new_board.alive_cells) == 0)
 
-    # def test_game_over_run_game_twice(self):
-    #     alive_cell_1 = Cell(x=0, y=1)
-    #     alive_cell_2 = Cell(x=1, y=2)
-    #     alive_cell_3 = Cell(x=2, y=1)
-    #
-    #     cells_list = [alive_cell_1, alive_cell_2, alive_cell_3]
-    #
-    #     board = Board(cells_list)
-    #
-    #     game = Game(board, 10, None)
-    #
-    #     new_board = game.run()
-    #     assert (len(new_board.alive_cells) == 2)
-    #     test = [t for t in new_board.alive_cells if t.x == 1 and t.y == 1]
-    #     assert (test[0].x == 1)
-    #     assert (test[0].y == 1)
-    #
-    #     new_board2 = game.run()
-    #
-    #     # for x in new_board.alive_cells:
-    #     #     print('newboard', x.x, x.y)
-    #     #
-    #     # for x in new_board2.alive_cells:
-    #     #     print('newboard2', x.x, x.y)
-    #
-    #     assert (game.game_over() == 'game over')
-    #     assert (len(new_board2.alive_cells) == 0)
-    #     assert (len(new_board.alive_cells) == 0)
+    def test_assess_length_of_game_board_alive_cells_array(self):
+        seed(10)
+
+        number_of_cells_on_board = 10
+        upper_limit = 10
+
+        game = Game(None, upper_limit, number_of_cells_on_board)
+
+        assert (len(game.board.alive_cells) == 9)
 
     def test_make_alive_cells(self):
         seed(10)
@@ -194,73 +175,20 @@ class TestGameOfLife:
 
         game = Game(None, upper_limit, number_of_cells_on_board)
 
-        # new_board = game.run()
-
-        # print('corr;', correct)
-
-
-        # for cell in game.board.alive_cells:
-        #     print(cell.__dict__)
-        # test = [t.x and t.y for t in game.board.alive_cells]
-        # print('test', test)
-
-        # print(type(cell_counter))
-        # for key in cell_counter.items():
-        #     print(key[0])
-        #     if key[0] >= 2:
-        #         assert False
-
-    assert True
-
-    def test_run_returns_alive_cells(self):
-        seed(10)
-
-        number_of_cells_on_board = 10
-        upper_limit = 10
-
-        # alive_cell_1 = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
-        # alive_cell_2 = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
-        # alive_cell_3 = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
-        # cells_list = [alive_cell_1, alive_cell_2, alive_cell_3]
-        # board = Board(cells_list)
-
-        game = Game(None, upper_limit, number_of_cells_on_board)
-
-        # new_board = game.run()
-
-        assert (len(game.board.alive_cells) == 10)
-    #
-    #
-    #
-    def test_cells_are_not_sharing_position_on_board(self):
-        seed(10)
-
-        number_of_cells_on_board = 10
-        upper_limit = 10
-
-        game = Game(None, upper_limit, number_of_cells_on_board)
-
-        # new_board = game.run()
-
         # NOTE: Counter method used in reincarnate_cell does not work as it checks for "deep equality" of
         # elements in list. Considering each cell has a different instance ID, the counter will always return
         # as a value. Need to find a way to compare the attributes of each instance.
 
-        # for cell in game.board.alive_cells:
-        #     print(cell.__eq__(cell))
-
         for a, b in itertools.combinations(game.board.alive_cells, 2):
             if a.x == b.x and a.y == b.y:
-                assert(a not in game.board.alive_cells)
+                assert (a not in game.board.alive_cells)
 
-        assert(len(game.board.alive_cells) == 9)
+        assert (len(game.board.alive_cells) == 9)
 
-        # assert False
-    #
-    # def test_randomisation_of_cell_coordinates(self):
-    #     seed(10)
-    #
-    #     randint(0, 20)
-    #
-    #     for x in range(0, 40):
-    #         print(randint(0, 20))
+    def test_randomisation_of_cell_coordinates(self):
+        seed(10)
+
+        randint(0, 20)
+
+        for x in range(0, 40):
+            print(randint(0, 20))
