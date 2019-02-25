@@ -187,3 +187,6 @@ class TestGameOfLife:
 
         for x in range(0, 40):
             print(randint(0, 20))
+
+#     test there is enough space on board - throw an error when user enters more cell than space on board
+# can i fit all cells on board

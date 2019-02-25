@@ -19,10 +19,13 @@ class Game:
     def make_alive_cells(self, upper_limit, number_of_cells_on_board):
         self.board = Board()
 
+        # create while loop that stops once 10 is reached,
+        # as long as there are no duplicates
         for x in range(number_of_cells_on_board):
             cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
             self.board.alive_cells.append(cell)
 
+            # put it into its own method, e.g. check_for_duplicates
             for a, b in itertools.combinations(self.board.alive_cells, 2):
                 if a.x == b.x and a.y == b.y:
                     self.board.alive_cells.remove(a)
