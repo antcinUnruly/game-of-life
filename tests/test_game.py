@@ -160,7 +160,7 @@ class TestGameOfLife:
 
         game = Game(None, upper_limit, number_of_cells_on_board)
 
-        assert (len(game.board.alive_cells) == 9)
+        assert (len(game.board.alive_cells) == 10)
 
     def test_make_alive_cells(self):
         seed(10)
@@ -170,15 +170,11 @@ class TestGameOfLife:
 
         game = Game(None, upper_limit, number_of_cells_on_board)
 
-        # NOTE: Counter method used in reincarnate_cell does not work as it checks for "deep equality" of
-        # elements in list. Considering each cell has a different instance ID, the counter will always return
-        # as a value. Need to find a way to compare the attributes of each instance.
-
         for a, b in itertools.combinations(game.board.alive_cells, 2):
             if a.x == b.x and a.y == b.y:
                 assert (a not in game.board.alive_cells)
 
-        assert (len(game.board.alive_cells) == 9)
+        assert (len(game.board.alive_cells) == 10)
 
     def test_randomisation_of_cell_coordinates(self):
         seed(10)
@@ -188,5 +184,24 @@ class TestGameOfLife:
         for x in range(0, 40):
             print(randint(0, 20))
 
-#     test there is enough space on board - throw an error when user enters more cell than space on board
-# can i fit all cells on board
+    def test_check_for_duplicates(self):
+        seed(10)
+
+        alive_cell_1 = Cell(x=0, y=1)
+        alive_cell_2 = Cell(x=1, y=2)
+        alive_cell_3 = Cell(x=2, y=1)
+        alive_cell_4 = Cell(x=2, y=1)
+
+        cells_list = [alive_cell_1, alive_cell_2, alive_cell_3, alive_cell_4]
+
+        board = Board(cells_list)
+
+        game = Game(board, None, None)
+
+        flag = True
+
+        assert (game.check_for_duplicates(
+            game.board.alive_cells) == flag)
+
+        # test there is enough space on board - throw an error when user enters more cell than space on board
+        # can i fit all cells on board

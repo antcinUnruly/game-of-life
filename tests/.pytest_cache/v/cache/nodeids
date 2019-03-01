@@ -11,5 +11,6 @@
   "test_game.py::TestGameOfLife::()::test_run_game_two_adjacent_cells",
   "test_game.py::TestGameOfLife::()::test_assess_length_of_game_board_alive_cells_array",
   "test_game.py::TestGameOfLife::()::test_make_alive_cells",
-  "test_game.py::TestGameOfLife::()::test_randomisation_of_cell_coordinates"
+  "test_game.py::TestGameOfLife::()::test_randomisation_of_cell_coordinates",
+  "test_game.py::TestGameOfLife::()::test_check_for_duplicates"
 ]
