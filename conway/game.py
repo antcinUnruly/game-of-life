@@ -19,29 +19,21 @@ class Game:
     def make_alive_cells(self, upper_limit, number_of_cells_on_board):
         self.board = Board()
 
-        i = 1
-        while i < number_of_cells_on_board:
-            for x in range(number_of_cells_on_board):
-                cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
-                self.board.alive_cells.append(cell)
+        i = 0
+        while len(self.board.alive_cells) < number_of_cells_on_board:
+            cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
+            self.board.alive_cells.append(cell)
 
             if self.check_for_duplicates(self.board.alive_cells):
                 del self.board.alive_cells[:]
 
-                for x in range(number_of_cells_on_board):
-                    cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
-                    self.board.alive_cells.append(cell)
-
             i += 1
-
         return self.board.alive_cells
 
     def check_for_duplicates(self, list_of_cells):
         for a, b in itertools.combinations(list_of_cells, 2):
             if a.x == b.x and a.y == b.y:
                 return True
-
-
 
     def run(self):
         self.new_board = Board()

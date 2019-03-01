@@ -165,8 +165,8 @@ class TestGameOfLife:
     def test_make_alive_cells(self):
         seed(10)
 
-        number_of_cells_on_board = 10
-        upper_limit = 10
+        number_of_cells_on_board = 20
+        upper_limit = 20
 
         game = Game(None, upper_limit, number_of_cells_on_board)
 
@@ -174,7 +174,7 @@ class TestGameOfLife:
             if a.x == b.x and a.y == b.y:
                 assert (a not in game.board.alive_cells)
 
-        assert (len(game.board.alive_cells) == 10)
+        assert (len(game.board.alive_cells) == 20)
 
     def test_randomisation_of_cell_coordinates(self):
         seed(10)
@@ -202,6 +202,16 @@ class TestGameOfLife:
 
         assert (game.check_for_duplicates(
             game.board.alive_cells) == flag)
+
+    def test_upper_limit_constraint(self):
+        seed(10)
+
+        number_of_cells_on_board = 15
+        upper_limit = 2
+
+        game = Game(None, upper_limit, number_of_cells_on_board)
+
+        assert (len(game.raise_upper_limit_constraint_error) == 'change upper limit')
 
         # test there is enough space on board - throw an error when user enters more cell than space on board
         # can i fit all cells on board
