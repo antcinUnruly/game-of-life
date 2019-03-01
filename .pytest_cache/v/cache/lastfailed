@@ -16,6 +16,7 @@
   "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours": true,
   "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours_case_two": true,
   "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours_two": true,
+  "tests/test_game.py::TestGameOfLife::()::test_upper_limit_constraint": true,
   "tests/test_game.py::test_dead_cell_with_three_live_neighbours": true,
   "tests/test_game.py::test_five_live_neighbours": true,
   "tests/test_neighbours.py::TestNeighbours::()::test_neighbours": true

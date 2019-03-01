@@ -26,14 +26,18 @@ class Game:
 
             if self.check_for_duplicates(self.board.alive_cells):
                 del self.board.alive_cells[:]
-
             i += 1
+
         return self.board.alive_cells
 
     def check_for_duplicates(self, list_of_cells):
         for a, b in itertools.combinations(list_of_cells, 2):
             if a.x == b.x and a.y == b.y:
-                return True
+                self.board.alive_cells.remove(a)
+                # return True
+
+    def raise_upper_limit_constraint(self):
+        print(self.upper_limit)
 
     def run(self):
         self.new_board = Board()

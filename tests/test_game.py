@@ -166,7 +166,7 @@ class TestGameOfLife:
         seed(10)
 
         number_of_cells_on_board = 20
-        upper_limit = 20
+        upper_limit = 3
 
         game = Game(None, upper_limit, number_of_cells_on_board)
 
@@ -211,7 +211,7 @@ class TestGameOfLife:
 
         game = Game(None, upper_limit, number_of_cells_on_board)
 
-        assert (len(game.raise_upper_limit_constraint_error) == 'change upper limit')
+        assert (game.raise_upper_limit_constraint_error == 'change upper limit')
 
         # test there is enough space on board - throw an error when user enters more cell than space on board
         # can i fit all cells on board

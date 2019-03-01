@@ -2,6 +2,7 @@
   "test_conway.py::TestGameOfLife::()::test_death_cell_with_more_than_three_neighbours": true,
   "test_experiment_runner.py::TestExperimentRunner": true,
   "test_experiment_runner.py::TestExperimentRunner::()::test_run_experiment": true,
+  "test_game.py::TestGameOfLife::()::test_check_for_duplicates": true,
   "test_game.py::TestGameOfLife::()::test_game_over_run_game_twice": true,
   "test_game.py::TestGameOfLife::()::test_game_run": true,
   "test_game.py::TestGameOfLife::()::test_upper_limit_constraint": true
