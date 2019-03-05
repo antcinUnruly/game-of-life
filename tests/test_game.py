@@ -3,6 +3,7 @@ from conway.cell import Cell
 from conway.board import Board
 from random import *
 import itertools
+import pytest
 
 
 class TestGameOfLife:
@@ -203,15 +204,21 @@ class TestGameOfLife:
         assert (game.check_for_duplicates(
             game.board.alive_cells) == flag)
 
-    def test_upper_limit_constraint(self):
+    def test_upper_limit_constraint_fail(self):
+        with pytest.raises(ValueError):
+            seed(10)
+
+            number_of_cells_on_board = 15
+            upper_limit = 2
+
+            game = Game(None, upper_limit, number_of_cells_on_board)
+
+    def test_upper_limit_constraint_success(self):
         seed(10)
 
         number_of_cells_on_board = 15
-        upper_limit = 2
+        upper_limit = 8
 
         game = Game(None, upper_limit, number_of_cells_on_board)
-
-        assert (game.raise_upper_limit_constraint_error == 'change upper limit')
-
-        # test there is enough space on board - throw an error when user enters more cell than space on board
-        # can i fit all cells on board
+        assert (game.board is not None)
+        # game.raise_upper_limit_constraint()

@@ -14,7 +14,10 @@ class Game:
 
     def check_board_status(self, upper_limit, number_of_cells_on_board):
         if self.board is None:
-            self.make_alive_cells(upper_limit, number_of_cells_on_board)
+            if number_of_cells_on_board < upper_limit ** 2:
+                self.make_alive_cells(upper_limit, number_of_cells_on_board)
+            else:
+                self.raise_upper_limit_constraint()
 
     def make_alive_cells(self, upper_limit, number_of_cells_on_board):
         self.board = Board()
@@ -34,17 +37,15 @@ class Game:
         for a, b in itertools.combinations(list_of_cells, 2):
             if a.x == b.x and a.y == b.y:
                 self.board.alive_cells.remove(a)
-                # return True
 
     def raise_upper_limit_constraint(self):
-        print(self.upper_limit)
+        raise ValueError('The board you requested is too small for your number of cells')
 
     def run(self):
         self.new_board = Board()
         del self.new_board.alive_cells[:]
         self.apply_alive_rules()
         self.apply_dead_rules()
-        # self.game_over()
 
         self.board = self.new_board
 
