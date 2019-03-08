@@ -222,3 +222,7 @@ class TestGameOfLife:
         game = Game(None, upper_limit, number_of_cells_on_board)
         assert (game.board is not None)
         # game.raise_upper_limit_constraint()
+
+    # write a test for game over; run a test for a game that doesn't last long
+
+    # write a test for displaying a message or some visual prompt to user
