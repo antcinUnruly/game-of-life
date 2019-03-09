@@ -99,9 +99,9 @@ class Game:
                 born_cell = Cell(x=key[0], y=key[1])
                 self.new_board.alive_cells.append(born_cell)
 
-    def game_over(self):
-        if len(self.board.alive_cells) == 0:
-            return 'game over'
+    def is_over(self):
+        if len(self.new_board.alive_cells) == 0:
+            return True
 
     def __run_logic(self, cell, neighbours_number):
         if cell in self.board.alive_cells:

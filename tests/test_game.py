@@ -219,8 +219,18 @@ class TestGameOfLife:
 
         game = Game(None, upper_limit, number_of_cells_on_board)
         assert (game.board is not None)
-        # game.raise_upper_limit_constraint()
 
     # write a test for game over; run a test for a game that doesn't last long
+    def test_game_over(self):
+        seed(10)
+
+        number_of_cells_on_board = 5
+        upper_limit = 5
+
+        game = Game(None, upper_limit, number_of_cells_on_board)
+
+        new_board = game.run()
+        flag = True
+        assert (game.is_over() == flag)
 
     # write a test for displaying a message or some visual prompt to user
