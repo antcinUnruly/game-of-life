@@ -1,5 +1,4 @@
 [
-  "test_board.py::TestBoard::()::test_board_instantiation",
   "test_game.py::TestGameOfLife::()::test_fewer_than_two_live_neighbours",
   "test_game.py::TestGameOfLife::()::test_two_live_neighbours_one",
   "test_game.py::TestGameOfLife::()::test_three_live_neighbours",

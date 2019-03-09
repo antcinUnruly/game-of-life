@@ -36,7 +36,7 @@ class Game:
     def check_for_duplicates(self, list_of_cells):
         for a, b in itertools.combinations(list_of_cells, 2):
             if a.x == b.x and a.y == b.y:
-                self.board.alive_cells.remove(a)
+                return True
 
     def raise_upper_limit_constraint(self):
         raise ValueError('The board you requested is too small for your number of cells')

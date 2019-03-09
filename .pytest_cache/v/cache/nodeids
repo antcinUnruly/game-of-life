@@ -1,4 +1,5 @@
 [
+  "tests/test_board.py::TestBoard::()::test_board_instantiation",
   "tests/test_game.py::TestGameOfLife::()::test_fewer_than_two_live_neighbours",
   "tests/test_game.py::TestGameOfLife::()::test_two_live_neighbours_one",
   "tests/test_game.py::TestGameOfLife::()::test_three_live_neighbours",
@@ -12,5 +13,6 @@
   "tests/test_game.py::TestGameOfLife::()::test_make_alive_cells",
   "tests/test_game.py::TestGameOfLife::()::test_randomisation_of_cell_coordinates",
   "tests/test_game.py::TestGameOfLife::()::test_check_for_duplicates",
-  "tests/test_game.py::TestGameOfLife::()::test_upper_limit_constraint"
+  "tests/test_game.py::TestGameOfLife::()::test_upper_limit_constraint_fail",
+  "tests/test_game.py::TestGameOfLife::()::test_upper_limit_constraint_success"
 ]

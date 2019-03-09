@@ -167,7 +167,7 @@ class TestGameOfLife:
         seed(10)
 
         number_of_cells_on_board = 20
-        upper_limit = 3
+        upper_limit = 20
 
         game = Game(None, upper_limit, number_of_cells_on_board)
 
@@ -186,8 +186,6 @@ class TestGameOfLife:
             print(randint(0, 20))
 
     def test_check_for_duplicates(self):
-        seed(10)
-
         alive_cell_1 = Cell(x=0, y=1)
         alive_cell_2 = Cell(x=1, y=2)
         alive_cell_3 = Cell(x=2, y=1)
@@ -197,7 +195,7 @@ class TestGameOfLife:
 
         board = Board(cells_list)
 
-        game = Game(board, None, None)
+        game = Game(board)
 
         flag = True
 
