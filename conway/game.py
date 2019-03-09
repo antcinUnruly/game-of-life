@@ -22,16 +22,19 @@ class Game:
     def make_alive_cells(self, upper_limit, number_of_cells_on_board):
         self.board = Board()
 
+        self.check_number_of_cells_on_board(upper_limit, number_of_cells_on_board)
+
+        return self.board.alive_cells
+
+    def check_number_of_cells_on_board(self, limit, number_of_cells):
         i = 0
-        while len(self.board.alive_cells) < number_of_cells_on_board:
-            cell = Cell(x=randint(0, upper_limit), y=randint(0, upper_limit))
+        while len(self.board.alive_cells) < number_of_cells:
+            cell = Cell(x=randint(0, limit), y=randint(0, limit))
             self.board.alive_cells.append(cell)
 
             if self.check_for_duplicates(self.board.alive_cells):
                 del self.board.alive_cells[:]
             i += 1
-
-        return self.board.alive_cells
 
     def check_for_duplicates(self, list_of_cells):
         for a, b in itertools.combinations(list_of_cells, 2):
