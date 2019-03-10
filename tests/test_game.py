@@ -233,4 +233,19 @@ class TestGameOfLife:
         flag = True
         assert (game.is_over() == flag)
 
+    def test_print_board(self):
+        seed(10)
+
+        number_of_cells_on_board = 5
+        upper_limit = 5
+
+        game = Game(None, upper_limit, number_of_cells_on_board)
+
+
+        game.print_board(upper_limit)
+
+        # assert (game.print_board(upper_limit) == ['x', 'x'])
+
+
+
     # write a test for displaying a message or some visual prompt to user

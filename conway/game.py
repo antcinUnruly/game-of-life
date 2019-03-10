@@ -2,6 +2,7 @@ from .cell import Cell
 from .board import Board
 from collections import Counter
 from random import *
+import numpy as np
 import itertools
 
 
@@ -25,6 +26,32 @@ class Game:
         self.check_number_of_cells_on_board(upper_limit, number_of_cells_on_board)
 
         return self.board.alive_cells
+
+    def print_board(self, upper_limit):
+        board_coordinates = list(itertools.product(range(upper_limit+1), range(upper_limit+1)))
+        alive_cell_coordinates = []
+        # for cell in self.board.alive_cells:
+        #     cell_coord = (cell.x, cell.y)
+
+
+        for a in self.board.alive_cells:
+            alive_cell_coordinates.append((a.x, a.y))
+
+        for index, item in enumerate(board_coordinates):
+            for cell in alive_cell_coordinates:
+                if item == (1, 2):
+                    board_coordinates[index] = 'O'
+                elif item != (1, 2):
+                    board_coordinates[index] = 'X'
+        print(board_coordinates)
+
+
+                # elif item != cell_coord:
+                #     print('wtf')
+                #     # coordinates[index] = "X"
+                #     # coordinates[index] = "X"
+
+
 
     def check_number_of_cells_on_board(self, limit, number_of_cells):
         i = 0
