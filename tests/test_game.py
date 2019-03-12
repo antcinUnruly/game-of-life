@@ -222,8 +222,6 @@ class TestGameOfLife:
 
     # write a test for game over; run a test for a game that doesn't last long
     def test_game_over(self):
-        seed(10)
-
         number_of_cells_on_board = 5
         upper_limit = 5
 

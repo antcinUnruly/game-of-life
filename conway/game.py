@@ -27,23 +27,29 @@ class Game:
 
         return self.board.alive_cells
 
-    def print_board(self, upper_limit):
-        board_coordinates = list(itertools.product(range(upper_limit+1), range(upper_limit+1)))
-        alive_cell_coordinates = []
-        # for cell in self.board.alive_cells:
-        #     cell_coord = (cell.x, cell.y)
-
-
-        for a in self.board.alive_cells:
-            alive_cell_coordinates.append((a.x, a.y))
-
-        for index, item in enumerate(board_coordinates):
-            for cell in alive_cell_coordinates:
-                if item == (1, 2):
-                    board_coordinates[index] = 'O'
-                elif item != (1, 2):
-                    board_coordinates[index] = 'X'
-        print(board_coordinates)
+    # def print_board(self, upper_limit):
+    #     board_coordinates = list(itertools.product(range(upper_limit+1), range(upper_limit+1)))
+    #     alive_cell_coordinates = []
+    #     # for cell in self.board.alive_cells:
+    #     #     cell_coord = (cell.x, cell.y)
+    #     print(board_coordinates)
+    #
+    #     board_coordinates = [['x , x , x'], ['x, x, x']]
+    #
+    #
+    #     O X O
+    #     X X X
+    #     O X X
+    #
+    #
+    #     for cell in self.board.alive_cells:
+    #         for index, item in enumerate(board_coordinates):
+    #             print(cell.x, cell.y)
+    #             if item == (cell.x, cell.y):
+    #                 board_coordinates[index] = 'O'
+    #             elif item != (cell.x, cell.y):
+    #                 board_coordinates[index] = 'X'
+    #     print(board_coordinates)
 
 
                 # elif item != cell_coord:
